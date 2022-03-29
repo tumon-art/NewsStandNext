@@ -1,0 +1,46 @@
+import React, { useReducer } from 'react'
+
+const initialState = {
+    isLoggedIn : false,
+    sideBar: false,
+    allPost: [],
+}
+
+const Reducer = (state,action) => {
+    switch (action.type) {
+        case "SIDE_BAR" :
+            return {
+                ...state,
+                sideBar: !state.sideBar,
+            };
+        case "GET_POST" :
+            return {
+                ...state,
+                allPost: state.allPost = action.payload
+            }
+        default:
+        return state;
+    }
+}
+export const UC = React.createContext();
+const Provider  = ({children}) => {
+    const [state, dispatch] = useReducer(Reducer, initialState)
+    
+
+    return (
+        <>
+            <UC.Provider
+            value={{
+                dispatch,
+                sideBar:state.sideBar,
+                isLoggedIn:state.isLoggedIn,
+                allPost:state.allPost
+            }}> 
+
+            {children}
+            </UC.Provider>
+        </>
+    )
+}
+
+export default Provider

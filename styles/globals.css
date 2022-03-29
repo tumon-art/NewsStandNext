@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+   
+}
+
+/* width */
+body::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #046434; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #03ac28; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #03be41; 
+  }
+
+.sidebar {
+    animation-name: example;
+    overflow: hidden;
+    z-index: 4;
+    animation-duration: .1s;  
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes example {
+    from {width: 0px;}
+    to {width: 200px;}
+  }
+
+@layer components {
+    .socialIocn {
+        @apply w-10 h-7
+    }
+    .categorySpan {
+        @apply flex items-center text-white
+    }
+    .newsCategory {
+        @apply ml-2 text-base font-bold
+    }
+
+}
