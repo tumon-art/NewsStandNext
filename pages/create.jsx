@@ -1,19 +1,35 @@
-import { useState } from "react"
+import { useState, useContext, useEffect } from "react"
 import axios from 'axios'
+import { UC } from "../context/UC"
+import { useRouter } from 'next/router'
 
 const CreatePost = () => {
-
+    const router = useRouter()
+   
     const [heading,setheading] = useState('')
     const [post,setpost] = useState('')
     const [photo,setphoto] = useState('')
     const [cont,setcont] = useState('')
+
+    const { isLoggedIn } = useContext(UC)
+
+ 
+    useEffect(()=>{
+    // REDIRECT IF LOGGED IN
+    if(isLoggedIn === false) {
+        router.push('/login')
+    }
+    },[isLoggedIn,router])
 
 
     // On Submit From 
     const formSubmit = async (e) => {
         e.preventDefault()
         try{
-            const res = await axios.post("https://news-stand-server.herokuapp.com/createpost",{
+            const res = await axios.post(
+                "https://news-stand-server.herokuapp.com/createpost",
+                // "http://localhost:3001/createpost",
+                {
             img:photo,
             header: heading,
             post:post,
@@ -24,9 +40,10 @@ const CreatePost = () => {
             setpost('')
             setphoto('')
             setcont('')
+            
 
         } catch(error) {
-            console.log(error);
+            console.log(res,error);
         }
     }
 

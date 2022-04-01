@@ -44,8 +44,8 @@ export const Header = () => {
 
     
      {/* === Header Name  */}
-     <h1 className=" font-mono text-center
-    text-white text-xl font-extrabold ">
+     <h1 className="text-center font-sans
+    text-white text-2xl font-extrabold ">
       <Link href='/'> News-Stand </Link>
     </h1>
 
@@ -65,8 +65,8 @@ export const Header = () => {
         
 
         
-        <span className=" text-white text-sm font-bold font-mono
-         cursor-pointer ">
+        <span className=" text-white text-sm font-bold
+         cursor-pointer font-sans ">
         <Link href='/login'>
          <a>Add Post</a>
         </Link>

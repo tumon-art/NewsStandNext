@@ -1,4 +1,6 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useEffect } from 'react'
+import axios from 'axios'
+
 
 const initialState = {
     isLoggedIn : false,
@@ -18,6 +20,11 @@ const Reducer = (state,action) => {
                 ...state,
                 allPost: state.allPost = action.payload
             }
+        case "LOG_CHECK":
+            return {
+                ...state,
+                isLoggedIn: action.payload
+            }
         default:
         return state;
     }
@@ -26,6 +33,7 @@ export const UC = React.createContext();
 const Provider  = ({children}) => {
     const [state, dispatch] = useReducer(Reducer, initialState)
     
+
 
     return (
         <>

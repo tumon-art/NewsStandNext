@@ -35,12 +35,12 @@ const OnePost = () => {
         </div>
 
         <div className=" w-full">
-        <h2 className=" text-green-500 font-mono
-        text-lg px-3 font-extrabold border-b-2 
+        <h2 className=" text-green-500
+        text-lg px-3  border-b-2 
         py-3 bg-green-50 border-green-200">
         {data[0].header} </h2>
 
-        <p className=" px-4 font-mono text-green-600
+        <p className=" px-4 font-extralight text-green-600
         text-base mt-8 mb-8"> {data[0].post} </p>
         </div>
       </div>

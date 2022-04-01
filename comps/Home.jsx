@@ -6,7 +6,7 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 export default function Home({data}) {
   data.reverse()
-if (!data) return <section className=" text-black">
+  if (!data) return <section className=" text-black">
     <Skeleton count={24} />
     </section>
 
@@ -17,7 +17,7 @@ if (!data) return <section className=" text-black">
    {data !== undefined && data.map((e,i)=>{
     return (
       <div key={i} className=" border-t-4 my-5  w-full
-       border-b-2 border-green-100 bg-green-50 sm:my-0 ">
+       border-b-2 border-green-200 bg-green-100 sm:my-0 ">
 
         <Image className=" object-cover block
         h-48 md:h-72 w-full" height={192} width="500" 
@@ -26,9 +26,10 @@ if (!data) return <section className=" text-black">
         <div className=" w-full py-2 px-1 md:py-2 ">
 
         <Link href={`/post/${e._id}`}>
-          <a className=" block font-mono text-green-700
+          <a className=" block text-green-700
          text-sm font-extrabold md:text-xl
-         border-l-4 border-green-300 px-3
+         border-l-4 border-green-400 px-3
+         font
         "> {e.header} </a>
         </Link>
         </div>

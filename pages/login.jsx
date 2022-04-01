@@ -1,25 +1,32 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { UC } from "../context/UC"
 
 const Login = () => {
     const [username,setusername] = useState('')
     const [password,setpassword] = useState('')
-    // const [loggedin,setloggedin] = useState(false)
-    // console.log(loggedin)
-    const router = useRouter()
+
+
+    // CHECK IF LOGGED IN
+    const {isLoggedIn,dispatch} = useContext(UC)
+
 
     useEffect(()=>{
-
         async function get(){
-            try{const token = document.cookie.split("=")[1]
+            try{
             const res = await axios.post(
-               //"https://news-stand-server.herokuapp.com/login"
+               //"https://news-stand-server.herokuapp.com/autologin"
                 "http://localhost:3001/autologin"
-                ,{
-            token:token,
-            }, { withCredentials: true });
-            if(res.data === true) router.push('/create')
+                ,{}, { withCredentials: true });
+
+            // GETING BOOLEAN FROM SERVER FOR ROUTEING
+            if(res.data === true) {
+                dispatch({
+                    type: "LOG_CHECK",
+                    payload: true
+                })
+            }
         } catch(error) {
             console.log(error);
         }
@@ -27,12 +34,20 @@ const Login = () => {
 
     },[])
 
+    const router = useRouter()
+    // REDIRECT IF LOGGED IN
+    isLoggedIn && router.push('/create')
+
+
+
+    // ON FORM SUBMIT
     const onFormSubmit = async (e) => {
         e.preventDefault()
         try{const token = document.cookie.split("=")[1]
             const res = await axios.post(
-               // "https://news-stand-server.herokuapp.com/login"
-                "http://localhost:3001/login",{
+               "https://news-stand-server.herokuapp.com/login",
+                // "http://localhost:3001/login",
+                {
             username:username,
             password:password,
             token:token,

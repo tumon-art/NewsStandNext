@@ -26,10 +26,10 @@ export const Footer = () => {
     <h2 className=" text-center px-2  shadow-sm
      rounded-sm
     bg-green-500 font-extrabold mt-5 py-1
-    text-2xl text-white font-sans"> News-Stand</h2>
+    text-xl text-white"> News-Stand</h2>
 
     <span className=" mt-3 flex items-center
-    text-white font-semibold font-sans"> Hear First, Share First!</span>
+    text-white font-semibold "> Hear First, Share First!</span>
 
     {/* === Logo Links  */}
     <div className=" flex justify-center opacity-80 text-white items-center mt-3">
