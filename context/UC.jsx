@@ -1,5 +1,4 @@
-import React, { useReducer, useEffect } from 'react'
-import axios from 'axios'
+import React, { useReducer } from 'react'
 
 
 const initialState = {

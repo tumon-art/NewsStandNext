@@ -3,7 +3,8 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { UC } from "../context/UC"
 
-var SERVER = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
+const URL = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
+var SERVER = URL[1]
 
 const Login = () => {
     const [username,setusername] = useState('')
@@ -14,11 +15,12 @@ const Login = () => {
     const {isLoggedIn,dispatch} = useContext(UC)
 
 
+    // AUTO LOGIN
     useEffect(()=>{
         async function get(){
             try{
             const res = await axios.post(
-                `${SERVER[1]}/autologin`,
+                `${SERVER}/autologin`,
                 {}, { withCredentials: true });
 
             // GETING BOOLEAN FROM SERVER FOR ROUTEING
@@ -46,7 +48,7 @@ const Login = () => {
         e.preventDefault()
         try{ 
             const res = await axios.post(
-                `${SERVER[1]}/login`,
+                `${SERVER}/login`,
                 {
                     username:username,
                     password:password
@@ -54,7 +56,7 @@ const Login = () => {
             // CLEAR STATES
             setusername('')
             setpassword('')
-            console.log(res)
+
             router.push('/create')
         } catch(error) {
             console.log(error);

@@ -3,6 +3,9 @@ import axios from 'axios'
 import { UC } from "../context/UC"
 import { useRouter } from 'next/router'
 
+const URL = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
+var SERVER = URL[1]
+
 const CreatePost = () => {
     const router = useRouter()
    
@@ -27,7 +30,7 @@ const CreatePost = () => {
         e.preventDefault()
         try{
             const res = await axios.post(
-                `${process.env.SERVER}/createpost`,
+                `${SERVER}/createpost`,
                 {
             img:photo,
             header: heading,
