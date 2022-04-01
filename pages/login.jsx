@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { UC } from "../context/UC"
 
+var SERVER = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
 const Login = () => {
     const [username,setusername] = useState('')
     const [password,setpassword] = useState('')
@@ -16,9 +17,8 @@ const Login = () => {
         async function get(){
             try{
             const res = await axios.post(
-               //"https://news-stand-server.herokuapp.com/autologin"
-                "http://localhost:3001/autologin"
-                ,{}, { withCredentials: true });
+                `${SERVER[1]}/autologin`,
+                {}, { withCredentials: true });
 
             // GETING BOOLEAN FROM SERVER FOR ROUTEING
             if(res.data === true) {
@@ -43,15 +43,13 @@ const Login = () => {
     // ON FORM SUBMIT
     const onFormSubmit = async (e) => {
         e.preventDefault()
-        try{const token = document.cookie.split("=")[1]
+        try{console.log(SERVER)
             const res = await axios.post(
-               "https://news-stand-server.herokuapp.com/login",
-                // "http://localhost:3001/login",
+                `${SERVER[1]}/login`,
                 {
-            username:username,
-            password:password,
-            token:token,
-            }, { withCredentials: true });
+                    username:username,
+                    password:password
+                }, { withCredentials: true });
             // CLEAR STATES
             setusername('')
             setpassword('')

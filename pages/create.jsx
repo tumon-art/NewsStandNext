@@ -27,8 +27,7 @@ const CreatePost = () => {
         e.preventDefault()
         try{
             const res = await axios.post(
-                "https://news-stand-server.herokuapp.com/createpost",
-                // "http://localhost:3001/createpost",
+                `${process.env.SERVER}/createpost`,
                 {
             img:photo,
             header: heading,

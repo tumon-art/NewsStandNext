@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  env: {
+    SERVER : "http://localhost:3001/"
+  }
 }
 
 module.exports = nextConfig
