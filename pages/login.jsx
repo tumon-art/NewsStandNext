@@ -44,7 +44,7 @@ const Login = () => {
     // ON FORM SUBMIT
     const onFormSubmit = async (e) => {
         e.preventDefault()
-        try{
+        try{ 
             const res = await axios.post(
                 `${SERVER[1]}/login`,
                 {
