@@ -52,7 +52,9 @@ const Login = () => {
                 {
                     username:username,
                     password:password
-                }, { withCredentials: true });
+                }, 
+                // { withCredentials: true }
+                );
             // CLEAR STATES
             setusername('')
             setpassword('')
