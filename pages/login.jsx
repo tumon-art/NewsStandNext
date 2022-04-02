@@ -21,7 +21,7 @@ const Login = () => {
             try{
             const res = await axios.post(
                 `${SERVER}/autologin`,
-                {}, { withCredentials: true });
+                {}, { withCredentials:true });
 
             // GETING BOOLEAN FROM SERVER FOR ROUTEING
             if(res.data === true) {
