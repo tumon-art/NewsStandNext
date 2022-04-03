@@ -58,7 +58,7 @@ const Login = () => {
             // CLEAR STATES
             setusername('')
             setpassword('')
-            console.log(res.data)
+            console.log(res.data,)
             router.push('/create')
         } catch(error) {
             console.log(error);
