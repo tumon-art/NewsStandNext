@@ -55,10 +55,11 @@ const Login = () => {
                 }, 
                 { withCredentials: true }
                 );
+
             // CLEAR STATES
             setusername('')
             setpassword('')
-            console.log(res.data,)
+            console.log(res.body)
             router.push('/create')
         } catch(error) {
             console.log(error);
