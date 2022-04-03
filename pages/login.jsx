@@ -11,7 +11,7 @@ const Login = () => {
     const [password,setpassword] = useState('')
 
 
-    // CHECK IF LOGGED IN
+    // CHECK IF LOGGED 
     const {isLoggedIn,dispatch} = useContext(UC)
 
 
