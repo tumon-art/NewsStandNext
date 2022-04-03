@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { UC } from "../context/UC"
 import Link from "next/link"
 import { SideBar } from "./SideBar"
@@ -6,6 +6,13 @@ import { SideBar } from "./SideBar"
 export const Header = () => {
   const {sideBar, dispatch} = useContext(UC)
 
+
+  useEffect(()=>{
+    // HIDE SCROLBAR
+  if(sideBar === true) {
+    document.getElementsByTagName("BODY")[0].style.overflow='hidden'
+  } else document.getElementsByTagName("BODY")[0].style.overflow='auto'
+  })
 
   const onMenuClick = () => {
     dispatch({
@@ -36,18 +43,21 @@ export const Header = () => {
      {/* === Menu Logo  */}
      <div className=" flex items-center px-3"
    onClick={onMenuClick}>
-        <svg className="h-6 w-6 text-white "
-         fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M4 8h16M4 16h16" />
-        </svg>
+      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
+      </svg>
     </div>
 
     
      {/* === Header Name  */}
-     <h1 className="text-center font-sans
-    text-white text-2xl font-extrabold ">
-      <Link href='/'> News-Stand </Link>
-    </h1>
+     <div  className="flex items-center">
+     <h1 className="text-center flex font-sans
+    text-white text-2xl ml-2 font-extrabold ">
+     <Link href='/'>
+      News-Stand
+     </Link>
+     </h1>
+     </div>
 
 
      {/* === Account Status */}
@@ -68,7 +78,9 @@ export const Header = () => {
         <span className=" text-white text-sm font-bold
          cursor-pointer font-sans ">
         <Link href='/login'>
-         <a>Add Post</a>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+        </svg>
         </Link>
         </span>
 

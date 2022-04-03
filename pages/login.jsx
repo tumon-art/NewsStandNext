@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react"
+import { useState, useContext } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { UC } from "../context/UC"

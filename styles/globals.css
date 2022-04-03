@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 body{
-  font-family: 'Carter One', cursive;
+  /* font-family: 'Carter One', cursive; */
+  background-color: rgb(228, 241, 235);
 }
 
 /* width */
@@ -13,17 +14,17 @@ body::-webkit-scrollbar {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #046434; 
+    background: #505251; 
   }
    
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #03ac28; 
+    background: #c4cac5; 
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #03be41; 
+    background: #ffffff; 
   }
 
 .sidebar {
@@ -46,6 +47,7 @@ body::-webkit-scrollbar {
     }
     .categorySpan {
         @apply flex items-center text-white
+        mt-4 border-b-2 py-2 hover:py-4 transition
     }
     .newsCategory {
         @apply ml-2 text-base font-bold
