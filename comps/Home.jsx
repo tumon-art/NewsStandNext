@@ -1,10 +1,12 @@
 import Link from "next/link"
 import Image from "next/image"
+import { useEffect } from "react"
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
 
 export default function Home({data}) {
+
   data.reverse()
   if (!data) return <section className=" text-black">
     <Skeleton count={24} />

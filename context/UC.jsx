@@ -1,11 +1,14 @@
-import React, { useReducer } from 'react'
-
+import React, { useReducer, useEffect } from 'react'
+import axios from 'axios'
 
 const initialState = {
     isLoggedIn : false,
     sideBar: false,
     allPost: [],
 }
+
+const URL = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
+var SERVER = URL[1]
 
 const Reducer = (state,action) => {
     switch (action.type) {
@@ -31,9 +34,29 @@ const Reducer = (state,action) => {
 export const UC = React.createContext();
 const Provider  = ({children}) => {
     const [state, dispatch] = useReducer(Reducer, initialState)
-    
 
-
+         // AUTO LOGIN
+         useEffect(()=>{
+            async function get(){
+                try{
+                const res = await axios.post(
+                    `${SERVER}/autologin`,
+                    {}, { withCredentials:true });
+        
+                // GETING BOOLEAN FROM SERVER FOR ROUTEING
+                if(res.data === true) {
+                    dispatch({
+                        type: "LOG_CHECK",
+                        payload: true
+                    })
+                }
+            } catch(error) {
+                console.log(error);
+            }
+            } get()
+        
+          },[])
+          console.log(state.isLoggedIn)
     return (
         <>
             <UC.Provider

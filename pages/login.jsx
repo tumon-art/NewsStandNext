@@ -11,37 +11,12 @@ const Login = () => {
     const [password,setpassword] = useState('')
 
 
-    // CHECK IF LOGGED 
+    // CHECK IF LOGGED
     const {isLoggedIn,dispatch} = useContext(UC)
-
-
-    // AUTO LOGIN
-    useEffect(()=>{
-        async function get(){
-            try{
-            const res = await axios.post(
-                `${SERVER}/autologin`,
-                {}, { withCredentials:true });
-
-            // GETING BOOLEAN FROM SERVER FOR ROUTEING
-            if(res.data === true) {
-                dispatch({
-                    type: "LOG_CHECK",
-                    payload: true
-                })
-            }
-        } catch(error) {
-            console.log(error);
-        }
-        } get()
-
-    },[])
 
     const router = useRouter()
     // REDIRECT IF LOGGED IN
     isLoggedIn && router.push('/create')
-
-
 
     // ON FORM SUBMIT
     const onFormSubmit = async (e) => {
@@ -61,6 +36,13 @@ const Login = () => {
             setpassword('')
             console.log(res)
             router.push('/create')
+
+            // LOGGING
+            dispatch({
+                type: "LOG_CHECK",
+                payload: true
+            })
+
         } catch(error) {
             console.log(error);
         }
