@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { UC } from "../context/UC"
 
 const URL = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
-var SERVER = URL[1]
+var SERVER = URL[0]
 
 const Login = () => {
     const [username,setusername] = useState('')
