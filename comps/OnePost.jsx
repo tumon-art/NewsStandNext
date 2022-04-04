@@ -19,9 +19,6 @@ const OnePost = () => {
     <Skeleton count={24} />
     </section>
 
-    // function beTop(){
-    //     window.scrollTo(0, 0)
-    //   } beTop()
 
   return (
    <>
@@ -35,12 +32,18 @@ const OnePost = () => {
         </div>
 
         <div className=" w-full">
-        <h2 className=" text-green-500
+        <header className=" text-green-500
         text-lg px-3  border-b-2  font-extrabold
         py-3 bg-green-50 border-green-200">
-        {data[0].header} </h2>
+          
+        <p> {data[0].header} </p>
 
-        <p className=" px-4 font-medium text-green-600
+        <section className=' flex text-green-600 text-xs font-bold mx-5 justify-end'>
+          NEWS | {data[0].cont}
+        </section>
+        
+        </header>
+        <p className=" whitespace-pre-line px-4 font-medium text-green-600
         text-base mt-8 mb-8"> {data[0].post} </p>
         </div>
       </div>

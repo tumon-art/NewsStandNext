@@ -49,8 +49,14 @@ const Login = () => {
     }
     
   return (
-   <form onSubmit={onFormSubmit} className="flex flex-col items-center mt-10 mb-48">
+   <>
+   <form onSubmit={onFormSubmit} 
+   className="flex flex-col items-center mt-10 mb-48">
 
+   <text className="block text-center m-10 text-green-600 font-mono">
+   Let`s prove that you are authorized.
+   </text>
+   
     {/* USER NAME */}
     <input className="block bg-gray-300 my-2
     rounded-sm placeholder:text-sm px-2 py-1
@@ -69,6 +75,7 @@ const Login = () => {
     my-5 rounded-sm font-semibold "> Submit</button>
 
    </form>
+   </>
   )
 }
 
