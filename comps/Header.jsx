@@ -1,77 +1,87 @@
-import { useContext, useEffect } from "react"
-import { UC } from "../context/UC"
-import Link from "next/link"
-import { SideBar } from "./SideBar"
+import { useContext, useEffect } from "react";
+import { UC } from "../context/UC";
+import Link from "next/link";
+import { SideBar } from "./SideBar";
 
 export const Header = () => {
-  const {sideBar, dispatch} = useContext(UC)
+  const { sideBar, dispatch } = useContext(UC);
 
-
-  useEffect(()=>{
+  useEffect(() => {
     // HIDE SCROLBAR
-  if(sideBar === true) {
-    document.getElementsByTagName("BODY")[0].style.overflow='hidden'
-  } else document.getElementsByTagName("BODY")[0].style.overflow='auto'
-  })
+    if (sideBar === true) {
+      document.getElementsByTagName("BODY")[0].style.overflow = "hidden";
+    } else document.getElementsByTagName("BODY")[0].style.overflow = "auto";
+  });
 
   const onMenuClick = () => {
     dispatch({
-        type: "SIDE_BAR"
-    })
-}
+      type: "SIDE_BAR",
+    });
+  };
 
   // Sidebar Click
   const sideBarClick = () => {
-
     dispatch({
-      type: "SIDE_BAR"
-    })
-  
-
-  }
+      type: "SIDE_BAR",
+    });
+  };
   return (
-  <> 
+    <>
+      {sideBar && <SideBar sideBarClick={sideBarClick} />}
 
-    {sideBar && <SideBar sideBarClick={sideBarClick} />}
+      <div className="header  bg-green-600 ">
+        {/* === Menu Logo  */}
+        <div className="item1" onClick={onMenuClick}>
+          <svg
+            className="h-6 w-6 text-white"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M4 6h16M4 12h8m-8 6h16"
+            />
+          </svg>
+        </div>
 
-   <div className="header bg-green-600 ">
-    
-     {/* === Menu Logo  */}
-     <div className="item1"
-   onClick={onMenuClick}>
-      <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h8m-8 6h16" />
-      </svg>
-    </div>
+        {/* === Header Name  */}
+        <div className="item2">
+          <h1
+            className="text-center flex font-sans
+    text-white text-2xl ml-2 font-extrabold "
+          >
+            <Link href="/">News-Stand</Link>
+          </h1>
+        </div>
 
-    
-     {/* === Header Name  */}
-     <div className="item2">
-     <h1 className="text-center flex font-sans
-    text-white text-2xl ml-2 font-extrabold ">
-     <Link href='/'>
-      News-Stand
-     </Link>
-     </h1>
-     </div>
-
-
-     {/* === Account Status */}
-     <div className="item3">
-        
-        <span className=" text-white text-sm font-bold
-         cursor-pointer font-sans ">
-        <Link href='/login'>
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-        </svg>
-        </Link>
-        </span>
-
-  
-     </div>
-
-   </div>
-   </>
-  )
-}
+        {/* === Account Status */}
+        <div className="item3">
+          <span
+            className=" text-white text-sm font-bold
+         cursor-pointer font-sans "
+          >
+            <Link href="/login">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2}
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+            </Link>
+          </span>
+        </div>
+      </div>
+    </>
+  );
+};

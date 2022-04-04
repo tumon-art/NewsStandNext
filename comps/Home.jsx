@@ -49,7 +49,7 @@ export default function Home({data}) {
    {shifted !== undefined && shifted.map((e,i)=>{
     return (
       <>
-      {i == 0 ? (<div key={i} className=" m-2 w-full flex border-b-4
+      {i == 0 ? (<div key={i} className=" m-2 flex border-b-4
        sm:my-0 md:flex-row-reverse ">
          <div className=" w-full px-1 md:pl-4 ">
 
@@ -59,7 +59,6 @@ export default function Home({data}) {
         "> {e.header} </a>
         </Link>
 
-        { console.log(e.post.split(".")[0])}
         <p className=" hidden md:block h-40 my-1 text-xs lg:text-sm text-gray-800 overflow-hidden 
          whitespace-pre-line"> {e.post.split(".")[0]} </p>
         </div>
