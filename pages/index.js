@@ -15,11 +15,11 @@ export async function getStaticProps() {
     revalidate: 10,
   }
 }
-
 const index = ({dataPosts}) => {
+  const data = dataPosts.reverse()
   return (
    <>
-    <Home data={dataPosts}/>
+    <Home data={data}/>
    </>
   )
 }

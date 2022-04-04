@@ -12,8 +12,6 @@ export default function Home({data}) {
   // BLUR
   const style = sideBar && "blur"
 
-  // ARRAY REVERSE
-  data.reverse()
 
   // DATA & SKELETON
   if (!data) return <section className=" text-black">

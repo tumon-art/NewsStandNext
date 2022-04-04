@@ -56,7 +56,7 @@ const Provider  = ({children}) => {
             } get()
         
           },[])
-          console.log(state.isLoggedIn)
+          
     return (
         <>
             <UC.Provider
