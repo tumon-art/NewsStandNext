@@ -14,13 +14,13 @@ export const SideBar = ({sideBarClick}) => {
     </svg>
 
     <div className="flex mt-2 ml-2 items-center">
-    <div className=" flex px-2 pb-0.5 mb-4
+    <div className=" flex px-4 pb-0.5 mb-4
      shadow-md bg-green-600
     text-white font-bold ring-1 ring-white"> Login</div>
     </div>
 
     <h3 className="  border-white border-b-4
-    text-lg font-bold text-white"> Sections </h3>
+    text-lg font-bold text-white px-4"> Sections </h3>
 
     {/*  === Category News */}
 

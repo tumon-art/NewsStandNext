@@ -59,7 +59,7 @@ body::-webkit-scrollbar {
 
 @keyframes example {
     from {width: 0px;}
-    to {width: 200px;}
+    to {width: 300px;}
   }
 
 @layer components {
@@ -68,7 +68,7 @@ body::-webkit-scrollbar {
     }
     .categorySpan {
         @apply flex items-center text-white
-        mt-4 border-b-2 py-2 hover:py-4 transition
+        mt-4 border-b-2 py-2 hover:pl-2 transition-all
     }
     .newsCategory {
         @apply ml-2 text-base font-bold
