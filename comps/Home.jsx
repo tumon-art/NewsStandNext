@@ -24,11 +24,11 @@ export default function Home({data}) {
   const shifted = data.filter((_,i)=> i > 0)
 
   return (
-   <div className={`my-5 ${style}
+   <div className={`mb-5 ${style}
    sm:grid grid-cols-2 gap-4`}>
 
     {/* ==== HEADER POSTS */}
-     <div className=" border-t-4 my-5  w-full  sm:my-0 ">
+     <div className=" mb-5  w-full  sm:my-0 ">
 
         <Image className=" object-cover block
         h-48 md:h-72 w-full" height={192} width="500" 
