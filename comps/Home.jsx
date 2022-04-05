@@ -16,7 +16,7 @@ export default function Home({ data }) {
           className={` w-full sm:min-w-[50%] sm:mb-10 border-b-4 sm:border-none sm:my-0 md:flex-row-reverse `}
         >
           {/* ==== IMAGE */}
-          <div className=" h-auto  relative sm:w-full sm:h-64 md:w-full md:h-auto overflow-hidden">
+          <div className=" h-auto relative sm:w-full sm:h-64 md:w-full md:h-auto overflow-hidden">
             <Image
               className=" object-cover"
               height={30}
