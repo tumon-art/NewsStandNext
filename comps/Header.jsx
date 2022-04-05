@@ -51,7 +51,7 @@ export const Header = () => {
         <div className="item2">
           <h1
             className="text-center flex font-sans
-    text-white text-2xl ml-2 font-extrabold "
+        text-white text-2xl ml-2 font-extrabold "
           >
             <Link href="/">News-Stand</Link>
           </h1>
