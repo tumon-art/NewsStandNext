@@ -13,7 +13,7 @@ export async function getStaticProps() {
 
   return {
     props: {dataPosts},
-    revalidate: 1,
+    revalidate: 10,
   }
 }
 const Index = ({dataPosts}) => {
