@@ -28,7 +28,7 @@ const Post = ({data}) => {
         </div>
 
         {/* ==== IMAGE */}
-        <div className=" h-24 m-1 w-52 lg:w-full lg:h-auto overflow-hidden">
+        <div className=" h-24 w-52 lg:w-full lg:h-auto overflow-hidden">
           <Image
             className=" object-cover"
             height={40}
