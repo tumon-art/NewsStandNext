@@ -4,16 +4,18 @@ import { useContext } from "react";
 import { UC } from "../context/UC";
 import Image from "next/image";
 import Link from "next/link";
-import Post from "./Post";
+ import Post from "./Post";
 
 export default function Home({ data }) {
   const { sideBar } = useContext(UC);
-
     // FIST POST
     const firstPost = (e, i) => {
+      const conts = data[0].cont
+      const arr = data.filter((e,i)=> e.cont = conts )
+      
       return (
         <div
-          className={` w-full sm:min-w-[50%] sm:mb-10 border-b-4 sm:border-none sm:my-0 md:flex-row-reverse `}
+          className={`  w-full sm:min-w-[50%] sm:mb-10 border-b-4 sm:border-none sm:my-0 md:flex-row-reverse `}
         >
           {/* ==== IMAGE */}
           <div className=" h-auto relative sm:w-full sm:h-64 md:w-full md:h-auto overflow-hidden">
@@ -39,7 +41,7 @@ export default function Home({ data }) {
             </Link>
   
             <p
-              className=" hidden md:block my-2 text-xs lg:text-sm 
+              className=" hidden md:block my-4 text-xs lg:text-sm 
               text-gray-800 overflow-hidden whitespace-pre-line"
             >
               {data[0].post.split(".")[0]}
@@ -61,13 +63,11 @@ export default function Home({ data }) {
       </section>
     );
 
-
-
   return (
     <div className={`block mb-5 ${style}  md:m-6 lg:flex`}>
       {firstPost(data)}
-      <div className={` mx-2 md:grid md:grid-cols-2 `}>
-        <Post data={data} />
+      <div className={`  mx-2 md:grid md:grid-cols-2 `}>
+      {data !== undefined && data.map((e, i) => <Post key={i} i={i} data={e} />)}
       </div>
     </div>
   );

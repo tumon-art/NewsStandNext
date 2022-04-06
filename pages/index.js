@@ -3,7 +3,8 @@ import Home from "../comps/Home"
 export async function getStaticProps() {
   const res = await fetch(`https://news-stand-server.herokuapp.com/getpost`)
   const dataPosts = await res.json()
-  console.log(dataPosts)
+  const data = dataPosts.reverse()
+
   if (!dataPosts) {
     return {
       notFound: true
@@ -11,12 +12,13 @@ export async function getStaticProps() {
   }
 
   return {
-    props: {dataPosts},
-    revalidate: 10,
+    props: {data},
+    revalidate: 1,
   }
 }
-const index = ({dataPosts}) => {
-  const data = dataPosts.reverse()
+const index = ({data}) => {
+  // const data = dataPosts.reverse()
+  console.table(data)
   return (
    <>
     <Home data={data}/>
