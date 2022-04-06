@@ -2,7 +2,8 @@ import Home from "../comps/Home"
 
 export async function getStaticProps() {
   const res = await fetch(`https://news-stand-server.herokuapp.com/getpost`)
-  const dataPosts = await res.json()
+  const data = await res.json()
+  const dataPosts = data.reverse()
   
 
   if (!dataPosts) {
@@ -17,10 +18,10 @@ export async function getStaticProps() {
   }
 }
 const Index = ({dataPosts}) => {
-  const data = dataPosts.reverse()
+
   return (
    <>
-    <Home data={data}/>
+    <Home data={dataPosts}/>
    </>
   )
 }
