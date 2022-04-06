@@ -2,8 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../styles/Post.module.css";
 
-const Post = ({data}) => {
-
+const Post = ({ data }) => {
   // SECONDE POST
   const secPost = (e, i) => {
     return (
@@ -19,16 +18,16 @@ const Post = ({data}) => {
             </a>
           </Link>
 
-          <p
-            className=" hidden sm:block my-1 text-xs md:text-sm 
-            text-gray-800 overflow-hidden whitespace-pre-line" >
+          <p className=" hidden sm:block my-1 text-xs md:text-sm 
+        text-gray-800 overflow-hidden whitespace-pre-line"
+          >
             {" "}
             {e.post.split(".")[0]}{" "}
           </p>
         </div>
 
         {/* ==== IMAGE */}
-        <div className=" h-24 w-52 lg:w-full lg:h-auto overflow-hidden">
+        <div className=" m-1 h-24 w-52 lg:m-0 lg:w-full lg:h-auto overflow-hidden">
           <Image
             className=" object-cover"
             height={40}
@@ -75,9 +74,7 @@ const Post = ({data}) => {
     else return restPost(e, i);
   };
   return (
-    <> 
-    {data !== undefined && data.map((e, i) => <> {renders(e, i)} </>)}
-    </>
+    <>{data !== undefined && data.map((e, i) => <> {renders(e, i)} </>)}</>
   );
 };
 
