@@ -1,8 +1,9 @@
+import Sociallinks from "./Sociallinks"
 
 export const SideBar = ({sideBarClick}) => {
 
   return (
-    <div className="sidebar
+    <div className="sidebar grid
     h-[100vh] absolute bg-green-600 border-r-4
     transition-width duration-500 border-green-700">
 
@@ -116,7 +117,9 @@ export const SideBar = ({sideBarClick}) => {
             <span className="newsCategory"> South Asia </span>
 
         </span>
+        
     </div>
+    <nav className=" self-end mb-5" > <Sociallinks className={' h-6 w-6 mx-2'} /> </nav>
     </div>
   )
 }

@@ -53,9 +53,9 @@ const Login = () => {
    <form onSubmit={onFormSubmit} 
    className="flex flex-col items-center mt-10 mb-48">
 
-   <text className="block text-center m-10 text-green-600 font-mono">
+   <p className="block text-center m-10 text-green-600 font-mono">
    Let`s prove that you are authorized.
-   </text>
+   </p>
    
     {/* USER NAME */}
     <input className="block bg-gray-300 my-2

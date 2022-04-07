@@ -61,15 +61,7 @@ const Provider = ({ children }) => {
       }
     }
     get();
-
-    const post = fetch(`https://news-stand-server.herokuapp.com/getpost`)
-                .then(res=> res.json())
-                .then(json=> dispatch({
-                  type: "GET_POST",
-                  payload: json
-                }))
   }, []);
-  // if(state.allPost[0]) console.group(state.allPost)
   return (
     <>
       <UC.Provider

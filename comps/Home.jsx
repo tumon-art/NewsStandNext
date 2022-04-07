@@ -52,12 +52,12 @@ export default function Home({data}) {
               {data[0].post.split(".")[0]}
             </p>
           </div>
-          <section className="m-5 text-gray-600">
+          <section className="hidden lg:block m-5 text-gray-600">
             <h4> Releted News</h4>
             
             {relative && relative.slice(0,3).map((e,i)=>{ 
               return (
-                <p className=" hidden lg:block my-1 text-sm font-normal text-neutral-900" 
+                <p className="  my-1 text-sm font-normal text-neutral-900" 
                 key={i}> {e.header}</p>
               )
             })}
