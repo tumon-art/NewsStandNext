@@ -29,9 +29,9 @@ export const Header = () => {
     <>
       {sideBar && <SideBar sideBarClick={sideBarClick} />}
 
-      <div className="header  bg-green-600 ">
+      <div className="header lg:flex justify-between bg-green-600 ">
         {/* === Menu Logo  */}
-        <div className="item1" onClick={onMenuClick}>
+        <div className="item1 lg:hidden" onClick={onMenuClick}>
           <svg
             className="h-6 w-6 text-white"
             fill="none"
@@ -48,13 +48,22 @@ export const Header = () => {
         </div>
 
         {/* === Header Name  */}
-        <div className="item2">
+        <div className="item2 flex items-center ">
           <h1
             className="text-center flex font-sans
         text-white text-2xl ml-2 font-extrabold "
           >
             <Link href="/">News-Stand</Link>
           </h1>
+
+          <nav className=" hidden lg:block ml-10 text-white font-extrabold"> 
+            <span className=" px-4"> Asia </span>
+            <span className=" px-4"> Europe </span>
+            <span className=" px-4"> North America </span>
+            <span className=" px-4"> Africa </span>
+            <span className=" px-4"> South Asia </span>
+            <span className=" px-4"> South America </span>
+          </nav>
         </div>
 
         {/* === Account Status */}
