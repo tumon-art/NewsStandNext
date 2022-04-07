@@ -42,10 +42,10 @@ const CreatePost = () => {
             setpost('')
             setphoto('')
             setcont('')
-            
-
+            console.log(res)
+            alert(res.data)
         } catch(error) {
-            console.log(res,error);
+            alert(error.response.data.message)
         }
     }
 
