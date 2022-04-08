@@ -3,8 +3,6 @@ import axios from 'axios'
 import { useRouter } from 'next/router'
 import { UC } from "../context/UC"
 
-const URL = ["http://localhost:3001","https://news-stand-server.herokuapp.com"]
-var SERVER = URL[1]
 
 const Login = () => {
     const [username,setusername] = useState('')
@@ -23,7 +21,7 @@ const Login = () => {
         e.preventDefault()
         try{ 
             const res = await axios.post(
-                `${SERVER}/login`,
+                `${process.env.SERVER}login`,
                 {
                     username:username,
                     password:password

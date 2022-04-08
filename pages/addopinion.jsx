@@ -4,22 +4,26 @@ import { UC } from "../context/UC"
 import { useRouter } from 'next/router'
 
 
-const CreatePost = () => {
+const Opinion = () => {
     const router = useRouter()
    
     const [heading,setheading] = useState('')
     const [post,setpost] = useState('')
-    const [photo,setphoto] = useState('')
-    const [cont,setcont] = useState('')
+    const [img,setimg] = useState('')
+    const [writerImg,setwriterImg] = useState('')
+    const [writerBio,setwriterBio] = useState('')
+    const [writerName,setwriterName] = useState('')
+
     const { isLoggedIn } = useContext(UC)
 
  
-    useEffect(()=>{
-    // REDIRECT IF LOGGED IN
-    if(isLoggedIn === false) {
-        router.push('/login')
-    }
-    },[isLoggedIn,router])
+    // CHECK LOGGED IN OR NOT
+    // useEffect(()=>{
+    // // REDIRECT IF LOGGED IN
+    // if(isLoggedIn === false) {
+    //     router.push('/login')
+    // }
+    // },[isLoggedIn,router])
 
 
     // On Submit From 
@@ -27,24 +31,27 @@ const CreatePost = () => {
         e.preventDefault()
         try{
             const res = await axios.post(
-                `${process.env.SERVER}createpost`,
+                `${process.env.SERVER}addopinion`,
                 {
-            img:photo,
+            img:img,
             header: heading,
             post:post,
-            cont:cont
+            writerBio:writerBio,
+            writerImg:writerImg
             });
 
             setheading('')
             setpost('')
-            setphoto('')
-            setcont('')
+            setimg('')
+            setwriterBio('')
+            setwriterImg('')
+            setwriterName('')
+
             console.log(res)
             alert(res.data)
         } catch(error) {
-            console.log(error.response.data.message)
+            console.log(error)
             alert(error.response.data.message)
-            
         }
     }
 
@@ -64,23 +71,22 @@ const CreatePost = () => {
         </textarea>
 
         <input className=" my-2 block bg-gray-300 text-black
-        w-2/3 rounded-sm" placeholder=" imgUrl" value={photo}
-        onChange={(e)=>setphoto(e.target.value)}/>
+        w-2/3 rounded-sm" placeholder=" imgUrl" value={img}
+        onChange={(e)=>setimg(e.target.value)}/>
 
-        {/* <input className=" my-2 block bg-gray-300 text-black
-        w-32 rounded-sm" placeholder=" continent" value={cont}
-        onChange={(e)=>setcont(e.target.value)}/> */}
+        <input className=" my-2 block bg-gray-300 text-black
+        w-2/3 rounded-sm" placeholder=" Writer's Bio" value={writerBio}
+        onChange={(e)=>setwriterBio(e.target.value)}/>
 
-        <select id="select" defaultValue={'default'}  className=" text-gray-600 bg-gray-300" onChange={(e)=>setcont(e.target.value)}>
-            <option value={'default'} disabled  hidden> Continent </option>
-            <option value='Middle East'> Middle East </option>
-            <option value='North America' > North America </option>
-            <option value='Asia'> Asia </option>
-            <option value='South Asia'> South Asia </option>
-            <option value='Europe'> Europe </option>
-            <option value='Africa'> Africa </option>
-            <option value='South America'> South America </option>
-        </select>
+        <input className=" my-2 block bg-gray-300 text-black
+        w-2/3 rounded-sm" placeholder="Writer's Img" value={writerImg}
+        onChange={(e)=>setwriterImg(e.target.value)}/>
+
+        <input className=" my-2 block bg-gray-300 text-black
+        w-2/3 rounded-sm" placeholder="Writer's Img" value={writerName}
+        onChange={(e)=>setwriterName(e.target.value)}/>
+        
+
 
         <button className=" text-white rounded-sm hover:opacity-70
         block bg-green-600 w-20 my-5" type="sumbit"> Submit</button>
@@ -91,4 +97,4 @@ const CreatePost = () => {
   )
 }
 
-export default CreatePost
+export default Opinion

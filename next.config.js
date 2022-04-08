@@ -7,6 +7,7 @@ const nextConfig = {
   env: {
     SERVER : "http://localhost:3001/"
   }
+ // https://news-stand-server.herokuapp.com/
 }
 
 module.exports = nextConfig

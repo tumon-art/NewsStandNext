@@ -84,7 +84,7 @@ export default function Home({ data }) {
     );
 
   return (
-    <div className={`block mb-5 ${style}  md:m-6 lg:flex`}>
+    <div className={`block mb-5 ${style} bg-green-50  md:m-6 lg:flex`}>
       {firstPost(data)}
       <div className={`  mx-2 md:grid md:grid-cols-2 `}>
         {data !== undefined &&
