@@ -52,7 +52,7 @@ const Provider = ({ children }) => {
           });
         }
       } catch (error) {
-        console.log(error);
+        console.log(error.response.message);
       }
     }
     get();
