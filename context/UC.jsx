@@ -7,11 +7,6 @@ const initialState = {
   allPost: [],
 };
 
-const URL = [
-  "http://localhost:3001",
-  "https://news-stand-server.herokuapp.com",
-];
-var SERVER = URL[1];
 
 const Reducer = (state, action) => {
   switch (action.type) {
@@ -44,7 +39,7 @@ const Provider = ({ children }) => {
     async function get() {
       try {
         const res = await axios.post(
-          `${SERVER}/autologin`,
+          `${process.env.SERVER}autologin`,
           {},
           { withCredentials: true }
         );
@@ -73,6 +68,7 @@ const Provider = ({ children }) => {
         }}
       >
         {children}
+        
       </UC.Provider>
     </>
   );

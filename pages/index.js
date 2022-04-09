@@ -21,10 +21,10 @@ const Index = ({dataPosts}) => {
   // GET LAST 8 POSTS AND REVERSE IT
   const data = dataPosts.slice(-8).reverse()
   return (
-   <>
+   <div className="md:m-6">
     <Home data={data}/>
     <Opinion />
-   </>
+   </div>
   )
 }
 

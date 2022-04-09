@@ -1,30 +1,34 @@
+import useSWR from "swr";
 import Image from "next/image";
-import Link from "next/link";
+import Link from "next/link"
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import ContPost from "../comps/ContPost";
+const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-export async function getStaticProps() {
-  const res = await fetch(`https://news-stand-server.herokuapp.com/asia`);
-  const data = await res.json();
 
-  if (!data) {
-    return {
-      notFound: true,
-    };
-  }
+const Asia = () => {
 
-  return {
-    props: { data },
-    revalidate: 10,
-  };
-}
+  const { data, error } = useSWR(
+    `${process.env.SERVER}asia`,
+    fetcher
+  );
 
-const Asia = ({ data }) => {
+  if (error) return <h1 className=" text-black">Failed to load </h1>;
+  if (!data)
+    return (
+      <section className=" text-black">
+        <Skeleton count={6} />
+      </section>
+    );
+
+
   // FIST POST
   const firstPost = (e, i) => {
-    console.log(data);
 
     return (
       <div
-        className={`  w-full sm:min-w-[50%] sm:mb-10 border-b-4 sm:border-none sm:my-0 md:flex-row-reverse `}
+        className={` mb-5  w-full sm:min-w-[50%] sm:mb-10 border-b-4 sm:border-none sm:my-0 md:flex-row-reverse `}
       >
         {/* ==== IMAGE */}
         <div className=" h-auto relative sm:w-full sm:h-64 md:w-full md:h-auto overflow-hidden">
@@ -61,7 +65,96 @@ const Asia = ({ data }) => {
     );
   };
 
-  return <> {firstPost()}</>;
+  // FIRST THREE POST 
+  const fistThree = (data,i) =>{
+    return (
+        <div key={i} className={` pl-5 flex sm:mb-10 lg:flex-row-reverse `}>
+    
+    <div className=" w-full pl-1 lg:ml-4 ">
+      <Link href={`/post/${data._id}`}>
+        <a className=" block text-sm font-extrabold sm:text-sm lg:text-lg">
+          {" "}
+          {data.header}{" "}
+        </a>
+      </Link>
+
+      <p className=" hidden sm:block my-1 text-xs md:text-sm 
+    text-gray-800 overflow-hidden whitespace-pre-line"
+      >
+        {" "}
+        {data.post.split(".")[0]}{" "}
+      </p>
+    </div>
+
+    {/* ==== IMAGE */}
+    <div className=" m-1 h-24 w-52 lg:m-0 lg:w-72 lg:h-auto overflow-hidden">
+      <Image
+        className=" object-cover"
+        height={40}
+        width={60}
+        layout="responsive"
+        src={`${data.img}`}
+        alt="imagee"
+      />
+    </div>
+  </div>
+    )
+  }
+
+  return(
+    <div className=" md:p-16 ">
+
+      <main className=" md:flex">
+        {/* === FIRST POST */}
+      {firstPost()}
+
+
+      {/* ===  POST */}
+      <div>
+      {data.slice(1,4).map((e,i)=>{
+        return fistThree(e,i)
+      })}
+      </div>
+      </main>
+
+      <section>
+        {data.slice(4).map((e,i)=>{
+          return(
+            <div key={i} className={` lg:w-4/6 pl-5 flex sm:mb-10  `}>
+    
+    <div className=" w-full pl-1 lg:ml-4 ">
+      <Link href={`/post/${e._id}`}>
+        <a className=" block text-sm font-extrabold sm:text-sm lg:text-lg">
+          {" "}
+          {e.header}{" "}
+        </a>
+      </Link>
+
+      <p className=" hidden sm:block my-1 text-xs md:text-sm 
+    text-gray-800 overflow-hidden whitespace-pre-line"
+      >
+        {" "}
+        {e.post.split(".")[0]}{" "}
+      </p>
+    </div>
+
+    {/* ==== IMAGE */}
+    <div className=" m-1 h-24 w-52 lg:m-0 lg:w-72 lg:h-auto overflow-hidden">
+      <Image
+        className=" object-cover"
+        height={40}
+        width={60}
+        layout="responsive"
+        src={`${e.img}`}
+        alt="imagee"
+      />
+    </div>
+  </div>
+          )
+        })}
+      </section>
+    </div>
+  );
 };
 
 export default Asia;

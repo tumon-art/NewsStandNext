@@ -57,7 +57,11 @@ export const Header = () => {
           </h1>
 
           <nav className=" hidden lg:block ml-10 text-white font-extrabold"> 
-            <span className=" px-4"> Asia </span>
+
+            <Link href='/asia'>
+            <a className=" px-4"> Asia </a>
+            </Link>
+            
             <span className=" px-4"> Europe </span>
             <span className=" px-4"> North America </span>
             <span className=" px-4"> Africa </span>

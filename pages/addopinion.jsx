@@ -31,13 +31,14 @@ const Opinion = () => {
         e.preventDefault()
         try{
             const res = await axios.post(
-                `${process.env.SERVER}addopinion`,
+                `${process.env.SERVER}create-opinion`,
                 {
             img:img,
             header: heading,
             post:post,
             writerBio:writerBio,
-            writerImg:writerImg
+            writerImg:writerImg,
+            writerName: writerName,
             });
 
             setheading('')
@@ -83,7 +84,7 @@ const Opinion = () => {
         onChange={(e)=>setwriterImg(e.target.value)}/>
 
         <input className=" my-2 block bg-gray-300 text-black
-        w-2/3 rounded-sm" placeholder="Writer's Img" value={writerName}
+        w-2/3 rounded-sm" placeholder="Writer's Name" value={writerName}
         onChange={(e)=>setwriterName(e.target.value)}/>
         
 

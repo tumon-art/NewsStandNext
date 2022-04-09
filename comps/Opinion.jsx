@@ -6,6 +6,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const Opinion = () => {
+  
   const { data, error } = useSWR(
     `${process.env.SERVER}getopinion`,
     fetcher
@@ -19,9 +20,9 @@ const Opinion = () => {
       </section>
     );
 
-    console.log(data)
+
   return (
-   <div className="my-2 p-4 bg-green-50">
+   <div className="my-2 p-4 md:w-4/6 bg-green-50">
 
     <div className="flex items-center">
     <div className=" text-xl font-medium"> OPINION </div>
@@ -30,7 +31,7 @@ const Opinion = () => {
 
     {data.map((e,i)=>{
       return(
-        <div className="flex my-2">
+        <div key={i} className="flex my-3">
 
           {/* ==== WRITER IMAGE */}
           <span className="">
@@ -40,7 +41,7 @@ const Opinion = () => {
 
           {/* ==== HEADER */}
           <div className="ml-4">
-          <header className=" leading-tight font-semibold"> {e.header} </header>
+          <header className=" text-gray-900 leading-tight text-sm font-semibold"> {e.header} </header>
 
            {/* ==== SVG & NAME */}
            <div className="flex mt-1  items-center">
@@ -54,7 +55,7 @@ const Opinion = () => {
             <path d="M9 9h1a1 1 0 1 1 -1 1v-2.5a2 2 0 0 1 2 -2" />
             <path d="M3 9h1a1 1 0 1 1 -1 1v-2.5a2 2 0 0 1 2 -2" />
             </svg>
-            <span className=" ml-1text-sm font-semibold text-gray-700"> {e.writerName}</span>
+            <span className=" ml-1 text-sm font-semibold text-gray-700"> {e.writerName}</span>
            </div>
 
           </div>
