@@ -37,7 +37,7 @@ const Provider = ({ children }) => {
   // AUTO LOGIN
   useEffect(() => {
     async function get() {
-      try {
+ 
         const res = await axios.post(
           `${process.env.SERVER}autologin`,
           {},
@@ -51,9 +51,6 @@ const Provider = ({ children }) => {
             payload: true,
           });
         }
-      } catch (error) {
-        console.log(error.response.message);
-      }
     }
     get();
   }, []);
