@@ -1,6 +1,6 @@
 const NewsLetter = () => {
   return (
-   <div className="bg-green-50 h-96 md:ml-4 items-center my-2 ">
+   <div className=" bg-green-50 h-96 md:ml-4 items-center my-2 ">
        <form className=" flex flex-col items-center p-5">
            {/* === SIGN UP */}
            <div className=" relative w-full flex items-center justify-center text-center ">

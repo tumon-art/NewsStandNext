@@ -1,7 +1,7 @@
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useContext } from "react";
-import { UC } from "../context/UC";
+import { UC } from "../../context/UC";
 import Image from "next/image";
 import Link from "next/link";
 import Post from "./Post";
@@ -37,7 +37,7 @@ export default function Home({ data }) {
         <div className=" m-5 ">
           <Link href={`/post/${data[0]._id}`}>
             <a
-              className=" border-l-8 border-green-500 px-5
+              className=" hover:underline border-l-8 border-green-500 px-5
                py-2 flex items-center text-xl font-extrabold sm:text-1xl lg:text-2xl"
             >
               {" "}

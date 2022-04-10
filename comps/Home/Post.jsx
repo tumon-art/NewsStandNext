@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Post.module.css";
+import styles from "../../styles/Post.module.css";
 
 const Post = ({ data,i }) => {
   // SECONDE POST
@@ -11,7 +11,7 @@ const Post = ({ data,i }) => {
       >
         <div className=" w-full pl-1 lg:ml-4 ">
           <Link href={`/post/${e._id}`}>
-            <a className=" block text-sm font-extrabold sm:text-sm lg:text-lg">
+            <a className=" hover:underline block text-sm font-extrabold sm:text-sm lg:text-lg">
               {" "}
               {e.header}{" "}
             </a>
@@ -46,7 +46,7 @@ const Post = ({ data,i }) => {
       <div className={`${styles.all}  flex pl-2 lg:flex-row-reverse `}>
         <div className=" w-full py-2 lg:py-0 lg:pl-2 pl-1 ">
           <Link href={`/post/${e._id}`}>
-            <a className=" flex text-sm font-bold md:text-md">
+            <a className=" hover:underline flex text-sm font-bold md:text-md">
               {" "}
               {e.header}{" "}
             </a>
