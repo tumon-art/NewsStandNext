@@ -31,16 +31,16 @@ const Opinion = () => {
 
     {data.map((e,i)=>{
       return(
-        <div key={i} className="flex my-3">
+        <div key={i} className=" flex my-3">
 
           {/* ==== WRITER IMAGE */}
-          <span className="">
+          <div className=" w-24 h-auto">
             <Image className=" object-cover rounded-full"
              src={e.writerImg} width={80} height={80} />
-          </span>
+          </div>
 
           {/* ==== HEADER */}
-          <div className="ml-4">
+          <div className="ml-4 w-full">
           <header className=" text-gray-900 leading-tight text-sm font-semibold"> {e.header} </header>
 
            {/* ==== SVG & NAME */}
