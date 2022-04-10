@@ -22,7 +22,7 @@ const Opinion = () => {
 
 
   return (
-   <div className="my-2 p-4 md:w-4/6 bg-green-50">
+   <div className="my-2 p-4 md:w-[60%] bg-green-50">
 
     <div className="flex items-center">
     <div className=" text-xl font-medium"> OPINION </div>

@@ -1,7 +1,10 @@
 import Sociallinks from "./Sociallinks"
+import Link from "next/link"
+import { useContext } from "react"
 
 export const SideBar = ({sideBarClick}) => {
 
+   
   return (
     <div className="sidebar grid
     h-[100vh] absolute bg-green-600 border-r-4
@@ -49,8 +52,11 @@ export const SideBar = ({sideBarClick}) => {
         6H5v2h6v-2z" clipRule="evenodd" />
         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
         </svg>
-        <span className="newsCategory"> Asia </span>
-
+        
+        <Link href='/asia'>
+            <a onClick={sideBarClick} className=" newsCategory"> Asia </a>
+        </Link>
+       
         </span>
 
         <span className="categorySpan"> 
@@ -62,8 +68,9 @@ export const SideBar = ({sideBarClick}) => {
         6H5v2h6v-2z" clipRule="evenodd" />
         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
         </svg>
-            <span className="newsCategory"> Europe </span>
-
+        <Link href='/europe'>
+            <a onClick={sideBarClick} className="newsCategory"> Europe </a>
+        </Link>
         </span>
 
         <span className="categorySpan"> 
@@ -88,7 +95,10 @@ export const SideBar = ({sideBarClick}) => {
         6H5v2h6v-2z" clipRule="evenodd" />
         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
         </svg>
-            <span className="newsCategory"> North America </span>
+
+            <Link href='/northamerica'>
+            <a onClick={sideBarClick} className=" newsCategory"> North America </a>
+            </Link>
 
         </span>
 

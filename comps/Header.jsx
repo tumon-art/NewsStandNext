@@ -66,7 +66,10 @@ export const Header = () => {
             <a className=" px-4"> Europe </a>
             </Link>
 
-            <span className=" px-4"> North America </span>
+            <Link href='/northamerica'>
+            <a className=" px-4"> North America </a>
+            </Link>
+
             <span className=" px-4"> Africa </span>
             <span className=" px-4"> South Asia </span>
             <span className=" px-4"> South America </span>

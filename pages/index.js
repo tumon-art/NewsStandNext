@@ -1,4 +1,5 @@
 import Home from "../comps/Home"
+import NewsLetter from "../comps/NewsLetter"
 import Opinion from "../comps/Opinion"
 
 export async function getStaticProps() {
@@ -23,7 +24,11 @@ const Index = ({dataPosts}) => {
   return (
    <div className="md:m-6">
     <Home data={data}/>
+    
+    <section className=" md:flex">
     <Opinion />
+    <NewsLetter />
+    </section>
    </div>
   )
 }
