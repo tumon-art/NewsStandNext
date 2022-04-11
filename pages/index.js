@@ -2,6 +2,8 @@ import Home from "../comps/Home/Home"
 import NewsLetter from "../comps/NewsLetter"
 import Opinion from "../comps/Home/Opinion"
 import OtherPosts from "../comps/Home/OtherPosts"
+import TopPosts from "../comps/TopPosts";
+
 
 export async function getStaticProps() {
   const res = await fetch(`https://news-stand-server.herokuapp.com/getpost`)
@@ -26,15 +28,21 @@ const Index = ({dataPosts}) => {
    <div className="md:m-6">
     <Home data={data}/>
     
-    <section className=" w-full md:flex">
+    <section className=" w-full md:gap-10 md:grid md:grid-cols-12">
 
-    <div className=" flex flex-col-reverse md:flex-col">
+    <div className=" col-start-1 col-end-9  flex flex-col-reverse md:flex-col">
       {/* ==== OTHER POSTS */}
+      <section className=" p-3 bg-green-50">
       <OtherPosts dataPosts={dataPosts} />
+      </section>
       <Opinion />
 
     </div>
+
+    <aside className=" col-start-9 col-end-13 ">
+    <TopPosts data={dataPosts} />
     <NewsLetter />
+    </aside>
 
     </section>
    </div>
