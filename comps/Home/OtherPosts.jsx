@@ -5,23 +5,20 @@ import Link from "next/link"
 const OtherPosts = ({ dataPosts }) => {
   return (
     <>
-      {dataPosts.slice(8).map((e, i) => {
+      { dataPosts && dataPosts.slice(8).map((e, i) => {
         return (
           <div key={i} className={` flex sm:mb-10  `}>
 
             <div className=" w-full  ">
               <Link href={`/post/${e._id}`}>
                 <a className=" hover:underline block text-sm font-extrabold sm:text-sm lg:text-lg">
-                  {" "}
-                  {e.header}{" "}
+                  {" "}{e.header}{" "}
                 </a>
               </Link>
 
               <p className=" hidden sm:block my-1 text-xs md:text-sm 
-            text-gray-800 overflow-hidden whitespace-pre-line"
-              >
-                {" "}
-                {e.post.split(".")[0]}{" "}
+            text-gray-800 overflow-hidden whitespace-pre-line">
+                {" "} {e.post.split(".")[0]} {" "}
               </p>
             </div>
 

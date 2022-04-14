@@ -35,14 +35,23 @@ const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   // AUTO LOGIN
-  useEffect(() => {
-    async function get() {
- 
+  useEffect(() => {  get()
+  async function get (){
+
+
+        // GET ALL POSTS 
+        const getPosts = await axios.get('https://news-stand-server.herokuapp.com/getpost')
+        dispatch({
+          type:"GET_POST",
+          payload:getPosts
+        })
+
         const res = await axios.post(
           `${process.env.SERVER}autologin`,
           {},
           { withCredentials: true }
         );
+
 
         // GETING BOOLEAN FROM SERVER FOR ROUTEING
         if (res.data === true) {
@@ -51,9 +60,11 @@ const Provider = ({ children }) => {
             payload: true,
           });
         }
+
+        
     }
-    get();
   }, []);
+
   return (
     <>
       <UC.Provider

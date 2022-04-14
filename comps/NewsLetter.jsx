@@ -1,11 +1,11 @@
-const NewsLetter = () => {
+const NewsLetter = ({my}) => {
   return (
-   <div className=" w-full bg-green-50 items-center ">
+   <div className={`bg-white items-center ${my}`}>
        <form className=" flex flex-col items-center p-5">
            {/* === SIGN UP */}
            <div className=" relative w-full flex items-center justify-center text-center ">
                <div className=" absolute left-4 w-[40%] h-[1px] bg-green-700"> </div>
-               <div className=" inline text-lg px-4 md:text-base bg-green-50 z-10 text-gray-800  mx-5 "> Sign up for  News Stand </div>
+               <div className=" inline text-lg px-4 bg-white md:text-base z-10 text-gray-800  mx-5 "> Sign up for  News Stand </div>
                <div className=" absolute right-4  w-[40%] h-[1px] bg-green-700"> </div>
            </div>
 

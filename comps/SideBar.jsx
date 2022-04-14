@@ -6,7 +6,7 @@ export const SideBar = ({sideBarClick}) => {
 
    
   return (
-    <div className="sidebar grid
+    <div className="sidebar flex flex-col
     h-[100vh] absolute bg-green-600 border-r-4
     transition-width duration-500 border-green-700">
 
@@ -19,11 +19,11 @@ export const SideBar = ({sideBarClick}) => {
 
     <div className="flex mt-2 ml-2 items-center">
     <div className=" flex px-4 pb-0.5 mb-4
-     shadow-md bg-green-600
-    text-white font-bold ring-1 ring-white"> Login</div>
+      bg-green-600 text-xl
+    text-white font-bold  ring-white"> News Stand</div>
     </div>
 
-    <h3 className="  border-white border-b-4
+    <h3 className=" border-green-300 border-b-4 
     text-lg font-bold text-white px-4"> Sections </h3>
 
     {/*  === Category News */}
@@ -130,7 +130,7 @@ export const SideBar = ({sideBarClick}) => {
         
     </div>
 
-    <nav className=" self-end mb-5" > <Sociallinks className={' h-6 w-6 mx-2'} /> </nav>
+    <nav className=" self-center my-5" > <Sociallinks className={' h-6 w-6 mx-2'} /> </nav>
 
     </div>
   )

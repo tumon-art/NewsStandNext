@@ -7,7 +7,7 @@ import Link from "next/link";
 import Post from "./Post";
 
 export default function Home({ data }) {
-  const { sideBar } = useContext(UC);
+  const { sideBar, allPost } = useContext(UC);
 
   let relative;
   // FIST POST
@@ -84,7 +84,7 @@ export default function Home({ data }) {
     );
 
   return (
-    <div className={`block mb-5 ${style} bg-green-50 lg:flex`}>
+    <div className={`block mb-5 ${style} lg:flex`}>
       {firstPost(data)}
       <div className={`  mx-2 md:grid md:grid-cols-2 `}>
         {data !== undefined &&

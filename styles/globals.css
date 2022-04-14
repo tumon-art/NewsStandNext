@@ -4,8 +4,10 @@
 
 body{
   /* font-family: 'Carter One', cursive; */
- 
+  background-color: rgb(240, 240, 240);
 }
+
+
 
 .item1 {
   grid-column: 1/2;
@@ -68,7 +70,8 @@ body::-webkit-scrollbar {
     }
     .categorySpan {
         @apply flex items-center text-white
-        mt-4 border-b-2 py-2 hover:pl-2 transition-all
+        mt-4 border-b-2 border-r-2 py-2 hover:pl-2 
+       hover:border-green-500 transition-all
     }
     .newsCategory {
         @apply ml-2 text-base font-bold

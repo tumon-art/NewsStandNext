@@ -3,11 +3,19 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
+import NewsLetter from "./NewsLetter";
+import { useContext } from "react";
+import { UC } from "../context/UC";
+import RelatedPost from "./Home/RelatedPost";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 const OnePost = () => {
   const router = useRouter();
+
+  // USE CONTEXT 
+  const {allPost} = useContext(UC)
+
 
   // GET ID FORM URL
   const pid = router.query.id;
@@ -24,6 +32,8 @@ const OnePost = () => {
         <Skeleton count={24} />
       </section>
     );
+
+  const filterd = allPost.data.filter((e,i)=> data[0].cont == e.cont)
 
   return (
     <>
@@ -44,7 +54,7 @@ const OnePost = () => {
           <header
             className=" text-gray-900
         text-lg px-3  border-b-2  font-extrabold
-        py-3 bg-green-50"
+        py-3 "
           >
             {/* ==== HEADER  */}
             <p> {data[0].header} </p>
@@ -62,6 +72,13 @@ const OnePost = () => {
             {" "}
             {data[0].post}{" "}
           </p>
+
+          {/* ==== NEWS LETTER  */}
+          <NewsLetter my={`my-10`} />
+
+          {/* ==== RELATED NEWS  */}
+          <RelatedPost dataPosts={filterd} mt={`mt-10`} />
+         
         </div>
       </div>
     </>

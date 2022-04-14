@@ -22,6 +22,7 @@ export async function getStaticProps() {
 }
 const Index = ({dataPosts}) => {
 
+
   // GET LAST 8 POSTS AND REVERSE IT
   const data = dataPosts.slice(0,8)
   return (
@@ -32,7 +33,7 @@ const Index = ({dataPosts}) => {
 
     <div className=" col-start-1 col-end-9  flex flex-col-reverse md:flex-col">
       {/* ==== OTHER POSTS */}
-      <section className=" p-3 bg-green-50">
+      <section className=" p-3  bg-white">
       <OtherPosts dataPosts={dataPosts} />
       </section>
       <Opinion />
