@@ -23,7 +23,7 @@ export async function getStaticProps() {
 const Index = ({dataPosts}) => {
 
 
-  // GET LAST 8 POSTS AND REVERSE IT
+  // GET LAST 8 POSTS AND REVERSE IT 
   const data = dataPosts.slice(0,8)
   return (
    <div className="md:m-6">
