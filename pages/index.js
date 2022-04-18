@@ -29,7 +29,8 @@ const Index = ({dataPosts}) => {
    <div className="md:m-6">
     <Home data={data}/>
     
-    <section className=" w-full md:gap-10 md:grid md:grid-cols-12">
+    <section className=" w-full md:px-10
+     md:gap-10 md:grid md:grid-cols-12">
 
     <div className=" col-start-1 col-end-9  flex flex-col-reverse md:flex-col">
       {/* ==== OTHER POSTS */}

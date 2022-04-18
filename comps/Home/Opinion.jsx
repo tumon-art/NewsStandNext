@@ -1,4 +1,5 @@
 import useSWR from "swr";
+import Link from "next/link";
 import Image from "next/image";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -16,7 +17,7 @@ const Opinion = () => {
   if (!data)
     return (
       <section className=" text-black">
-        <Skeleton count={6} />
+        <Skeleton count={10} />
       </section>
     );
 
@@ -34,14 +35,19 @@ const Opinion = () => {
         <div key={i} className=" lg:hidden flex my-3">
 
           {/* ==== WRITER IMAGE */}
-          <div className=" w-24 h-auto">
+          <div>
             <Image className=" object-cover rounded-full"
              src={e.writerImg} width={80} height={80} />
           </div>
 
           {/* ==== HEADER */}
           <div className="ml-4 w-full">
-          <header className=" text-gray-900 leading-tight text-sm font-semibold"> {e.header} </header>
+            
+          <Link href={`/opinion/${e._id}`}>
+          <a className=" text-gray-900 leading-tight text-sm font-semibold">
+            {e.header} 
+          </a>
+          </Link>
 
            {/* ==== SVG & NAME */}
            <div className="flex mt-1  items-center">
@@ -69,14 +75,17 @@ const Opinion = () => {
         <div key={i} className="hidden lg:flex  my-3">
 
           {/* ==== WRITER IMAGE */}
-          <div className=" w-24 h-auto">
+          <div>
             <Image className=" object-cover rounded-full"
-             src={e.writerImg} width={80} height={80} />
+             src={e.writerImg} width={80} height={80}  />
           </div>
 
           {/* ==== HEADER */}
           <div className="ml-4 w-full">
-          <header className=" text-gray-900 leading-tight text-sm font-semibold"> {e.header} </header>
+
+          <Link href={`/opinion/${e._id}`}>
+          <a className=" text-gray-900 leading-tight text-sm font-semibold"> {e.header} </a>
+          </Link>
 
            {/* ==== SVG & NAME */}
            <div className="flex mt-1  items-center">

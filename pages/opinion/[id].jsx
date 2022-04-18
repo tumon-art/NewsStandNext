@@ -1,9 +1,9 @@
-import OnePost from "../../comps/OnePost"
+import OneOpinion from "../../comps/OneOpinion"
 
 const id = () => {
   return (
    <>
-    <OnePost />
+    <OneOpinion />
    </>
   )
 }
