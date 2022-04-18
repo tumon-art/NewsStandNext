@@ -1,4 +1,5 @@
 import Sociallinks from "./Sociallinks"
+import Link from "next/link"
 
 export const Footer = () => {
   return (
@@ -24,10 +25,11 @@ export const Footer = () => {
     {/* ==== Center  */}
     <div className="flex flex-col items-center self-center ">
 
-    <h2 className=" text-center px-2  shadow-sm
-     rounded-sm
+    <Link href="/">
+    <a className=" text-center px-2  shadow-sm rounded-sm
     bg-green-500 font-extrabold mt-5 py-1
-    text-xl text-white"> News-Stand</h2>
+    text-xl text-white"> News-Stand</a>
+    </Link>
 
     <span className=" mt-3 flex items-center
     text-white font-semibold "> Hear First, Share First!</span>

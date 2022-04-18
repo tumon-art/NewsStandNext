@@ -1,6 +1,5 @@
 import Sociallinks from "./Sociallinks"
 import Link from "next/link"
-import { useContext } from "react"
 
 export const SideBar = ({sideBarClick}) => {
 
@@ -19,8 +18,12 @@ export const SideBar = ({sideBarClick}) => {
     </svg>
 
     <div className="grid ml-4 mt-2 items-center">
-    <div className=" flex  pb-0.5 mb-4 text-xl
-    text-white font-bold"> News Stand</div>
+
+    <Link href='/'>
+    <a onClick={sideBarClick} 
+    className=" flex  pb-0.5 mb-4 text-xl
+    text-white font-bold"> News Stand</a>
+    </Link>
 
     <div className=" flex items-center mb-4">
     <div className=" border-green-300
