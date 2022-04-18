@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    SERVER : "http://localhost:3001/"
+    SERVER : "https://news-stand-server.herokuapp.com/"
   }
  // https://news-stand-server.herokuapp.com/
  // http://localhost:3001/
