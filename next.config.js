@@ -5,7 +5,7 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    SERVER : "https://news-stand-server.herokuapp.com/"
+    SERVER : "https://evening-stream-93162.herokuapp.com/"
   }
 
  // https://news-stand-server.herokuapp.com/
