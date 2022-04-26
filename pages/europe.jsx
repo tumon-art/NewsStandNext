@@ -43,7 +43,7 @@ const Europe = () => {
           />
         </div>
 
-        {/* === Heading */}
+        {/* ===  Heading */}
         <div className=" m-5 ">
           <Link href={`/post/${data[0]._id}`}>
             <a
