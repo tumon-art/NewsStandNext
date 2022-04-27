@@ -18,7 +18,7 @@ const Asia = () => {
   if (!data)
     return (
       <section className=" text-black">
-        <Skeleton count={6} />
+        <Skeleton count={24} />
       </section>
     );
 

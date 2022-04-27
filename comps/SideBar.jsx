@@ -10,9 +10,9 @@ export const SideBar = ({sideBarClick}) => {
     transition-width duration-500 border-green-700">
 
     <section className=" bg-green-700">
-        {/* === CLOSE SIDEBAR */}
-    <svg className="h-6 w-6 text-white absolute right-3 mt-2" fill="none" 
-    viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+    {/* === CLOSE SIDEBAR */}
+    <svg className="h-6 w-6 text-white absolute right-3 mt-2 cursor-pointer" 
+    fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
     onClick={sideBarClick}>
     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
     </svg>
@@ -34,8 +34,6 @@ export const SideBar = ({sideBarClick}) => {
     </section>
 
     {/*  === Category News */}
-
-
 
     <div className=' mt-5 py-2 px-4'>
     <span className="categorySpan"> 
