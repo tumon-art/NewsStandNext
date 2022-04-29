@@ -11,13 +11,15 @@ const NewsLetter = ({ my }) => {
         </div>
 
         <h1 className=" my-4 text-3xl md:text-lg lg:text-3xl text-gray-800 font-bold "> Weekly Newsletter</h1>
-        <span className=" text-gray-700 my-2  text-sm "> The latest news from around
+      
+        <div className=" w-full">
+        <span className=" text-gray-700   text-sm "> The latest news from around
           the world.Timely. Accurate. Fair. </span>
 
         {/* === EMAIL & BUTTON */}
-        <div className=" w-full flex md:flex-col md:items-center justify-center">
+        <div className=" my-2 w-full flex md:flex-col md:items-center justify-center">
           
-          <input className=" md:w-full pl-2  md:m-0  ring-1
+          <input className=" w-full md:w-full pl-2  md:m-0  ring-1
            ring-gray-400 mr-[5%] h-10"
             placeholder="Email Address" />
 
@@ -26,6 +28,7 @@ const NewsLetter = ({ my }) => {
              Sign up
           </button>
 
+        </div>
         </div>
 
         {/* ==== Privacy Policy  */}
