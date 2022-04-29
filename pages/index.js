@@ -26,10 +26,10 @@ const Index = ({dataPosts}) => {
   // GET LAST 8 POSTS  AND REVERSE IT
   const data = dataPosts.slice(0,8)
   return (
-   <div className="md:m-6">
+   <div className=" w-full md:p-6">
     <Home data={data}/>
     
-    <section className=" w-full md:px-10
+    <section className="  md:px-10
      md:gap-10 md:grid md:grid-cols-12">
 
     <div className=" col-start-1 col-end-9  flex flex-col-reverse md:flex-col">

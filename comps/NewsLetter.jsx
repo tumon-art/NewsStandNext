@@ -12,18 +12,18 @@ const NewsLetter = ({ my }) => {
 
         <h1 className=" my-4 text-3xl md:text-lg lg:text-3xl text-gray-800 font-bold "> Weekly Newsletter</h1>
       
-        <div className=" w-full">
-        <span className=" text-gray-700   text-sm "> The latest news from around
+        <div className=" w-full grid justify-center">
+        <span className=" text-gray-700 py-1  text-sm "> The latest news from around
           the world.Timely. Accurate. Fair. </span>
 
         {/* === EMAIL & BUTTON */}
-        <div className=" my-2 w-full flex md:flex-col md:items-center justify-center">
+        <div className=" w-full flex md:flex-col md:items-center ">
           
-          <input className=" w-full md:w-full pl-2  md:m-0  ring-1
+          <input className=" w-[70%]  md:w-full pl-2  md:m-0  ring-1
            ring-gray-400 mr-[5%] h-10"
             placeholder="Email Address" />
 
-          <button className=" w-[30%] md:mt-5 md:w-40 text-white
+          <button className=" w-[30%] h-10 md:mt-5 md:w-40 text-white
            bg-black px-5 py-2">
              Sign up
           </button>

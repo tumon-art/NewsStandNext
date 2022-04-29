@@ -3,12 +3,13 @@ import Link from "next/link"
 
 export const Footer = () => {
   return (
-   <div className='bg-green-600'>
+   <div className=' bg-green-600'>
        
-    <div className=" grid sm:grid-cols-3 h-[25vh] md:h-[33vh] ">
+    <div className=" md:grid md:grid-cols-3 h-[25vh] md:h-[33vh]
+     justify-center flex ">
     {/* === Quick Links  */}
     <div className=' hidden mt-5  px-3
-     pl-[30%] flex-col items-center text-white font-bold sm:block '>
+     pl-[30%] flex-col items-center text-white font-bold md:block '>
 
     <h1 className=" inline border-white border-t-4
     text-2xl font-extrabold font-sans mb-2"> Quick Links </h1>
@@ -41,7 +42,7 @@ export const Footer = () => {
 
     {/* // Contact Details */}
     <div className=' pl-[30%] hidden mt-5
-    flex-col text-white font-bold sm:block '>
+    flex-col text-white font-bold md:block '>
     <h1 className=" text-2xl font-extrabold font-sans mb-2
     inline border-white border-t-4"> Contact </h1>
 
