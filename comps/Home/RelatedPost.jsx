@@ -1,12 +1,19 @@
 import Image from "next/image";
 import Link from "next/link"
 
+import { useContext } from "react";
+import { UC } from "../../context/UC";
+
 // mt === margin top 
-const RelatedPost = ({ dataPosts, mt }) => {
-    
+const RelatedPost = ({ cont, mt }) => {
+
+    // USE CONTEXT 
+    const { allPost } = useContext(UC)
+
+    const filterd = allPost.data && allPost.data.filter((e, i) => cont == e.cont)    
     return (
         <div className={`${mt} px-1 mb-5`}>
-            {dataPosts && dataPosts.map((e, i) => {
+            {filterd && filterd.map((e, i) => {
                 return (
                     <div key={i} className={` flex sm:mb-10  `}>
 
@@ -18,7 +25,7 @@ const RelatedPost = ({ dataPosts, mt }) => {
                             </Link>
 
                             <p className=" sm:block my-1 text-xs md:text-sm 
-                             text-gray-800 overflow-hidden whitespace-pre-line">
+                          text-gray-800 overflow-hidden whitespace-pre-line">
                                 {" "} {e.post.split(".")[0]} {" "}
                             </p>
                         </div>

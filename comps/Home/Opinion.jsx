@@ -1,26 +1,11 @@
-import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const Opinion = () => {
-  
-  const { data, error } = useSWR(
-    `${process.env.SERVER}getopinion`,
-    fetcher
-  );
 
-  if (error) return <h1 className=" text-black">Failed to load </h1>;
-  if (!data)
-    return (
-      <section className=" text-black">
-        <Skeleton count={10} />
-      </section>
-    );
+const Opinion = ({opinion}) => {
 
+  const data = opinion
 
   return (
    <div className="my-2 p-4 w-full bg-white">

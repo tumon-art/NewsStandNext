@@ -1,28 +1,23 @@
-import useSWR from "swr";
 import Image from "next/image";
 import Link from "next/link"
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
-import ContPost from "../comps/ContPost";
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 
-const Asia = () => {
 
-  const { data, error } = useSWR(
-    `${process.env.SERVER}asia`,
-    fetcher
-  );
+export async function getStaticProps() {
 
-  if (error) return <h1 className=" text-black">Failed to load </h1>;
-  if (!data)
-    return (
-      <section className=" text-black">
-        <Skeleton count={24} />
-      </section>
-    );
+  const res = await fetch(`${process.env.SERVER}asia`)
+  const data = await res.json()
 
+  return {
+    props: {
+      post: data
+    },
+  }
+}
 
+const Asia = ({post}) => {
+
+  const data = post
   // FIST POST
   const firstPost = (e, i) => {
 

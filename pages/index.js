@@ -6,21 +6,25 @@ import TopPosts from "../comps/TopPosts";
 
 
 export async function getStaticProps() {
+
   const res = await fetch(`${process.env.SERVER}getpost`)
   const dataPostsall = await res.json()
   const dataPosts = dataPostsall.reverse()
-  if (!dataPosts) {
-    return {
-      notFound: true
-    }
-  }
+
+    // GET OPINIONS 
+    const opinionRes = await fetch(`${process.env.SERVER}getopinion`)
+    const opinionData = await opinionRes.json()
+
 
   return {
-    props: {dataPosts},
+    props: {dataPosts,opinionData},
     revalidate: 10,
   }
+
+
+
 }
-const Index = ({dataPosts}) => {
+const Index = ({dataPosts,opinionData}) => {
 
 
   // GET LAST 8 POSTS  AND REVERSE IT
@@ -37,7 +41,7 @@ const Index = ({dataPosts}) => {
       <section className=" p-3  bg-white">
       <OtherPosts dataPosts={dataPosts} />
       </section>
-      <Opinion />
+      <Opinion opinion={opinionData} />
 
     </div>
 

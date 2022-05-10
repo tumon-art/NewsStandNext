@@ -1,35 +1,12 @@
-import useSWR from "swr";
-import { useRouter } from "next/router";
 import Image from "next/image";
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 import NewsLetter from "./NewsLetter";
 
 
-const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const OneOpinion = () => {
-    // USE ROUTER
-    const router = useRouter();
-  
-    // GET ID FORM URL
-    const pid = router.query.id;
-  
-    // USE SWR
-    const { data, error } = useSWR(
-      `${process.env.SERVER}opinion/${pid}`,
-      fetcher
-    );
-  
-    if (error) return <h1 className=" text-black">Failed to load </h1>;
-    if (!data)
-      return (
-        <section className=" text-black">
-          <Skeleton count={24} />
-        </section>
-      );
+const OneOpinion = ({all}) => {
 
-      console.log(data[0])
+  const data = all
+   
   return (
    <div className="w-full lg:pl-20 lg:pr-96 lg:py-11">
 

@@ -1,20 +1,21 @@
 import Image from "next/image";
 import NewsLetter from "../../comps/NewsLetter";
-// import RelatedPost from "./Home/RelatedPost";
+import RelatedPost from "../../comps/Home/RelatedPost";
+
 
 const id = ({ all }) => {
 
-  console.log(all)
+
 
 
   return (
     <>
-    <div id="i" className="w-full lg:pl-20 lg:pr-96 lg:py-11">
-        
+      <div id="i" className="w-full lg:pl-20 lg:pr-96 lg:py-11">
+
         <div className=" h-48 w-full sm:h-72  lg:h-72 relative">
 
           <Image
-            className={` object-cover`}
+            className={`object-cover`}
             layout="fill"
             src={all[0].img}
             alt="imagee"
@@ -46,7 +47,7 @@ const id = ({ all }) => {
           <NewsLetter my={`my-10`} />
 
           {/* ==== RELATED NEWS  */}
-          {/* <RelatedPost dataPosts={filterd} mt={`mt-10`} /> */}
+          <RelatedPost cont={all[0].cont} mt={`mt-10`} />
 
         </div>
       </div>
@@ -58,7 +59,6 @@ const id = ({ all }) => {
 export async function getStaticPaths() {
   const res = await fetch(`${process.env.SERVER}getpost`)
   const dataPostsall = await res.json()
-
 
   const paths = dataPostsall.map(e => {
     return {
