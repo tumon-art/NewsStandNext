@@ -6,12 +6,11 @@ const Post = ({ data,i }) => {
   // SECONDE POST
   const secPost = (e) => {
     return (
-      <div
-        className={`${styles.sec} pl-2 my-2 flex sm:my-0 lg:flex-row-reverse `}
-      >
+      <div className={`${styles.sec} pl-1 sm:pl-2 my-2 flex sm:my-0 lg:flex-row-reverse `}>
+        
         <div className=" w-full pl-1 lg:ml-4 ">
           <Link href={`/post/${e._id}`}>
-            <a className=" hover:underline block text-sm font-extrabold sm:text-sm lg:text-lg">
+            <a className=" hover:underline block text-sm font-bold sm:text-sm lg:text-lg">
               {" "}
               {e.header}{" "}
             </a>
@@ -43,7 +42,7 @@ const Post = ({ data,i }) => {
   // ALL POSTS
   const restPost = (e) => {
     return (
-      <div className={`${styles.all}  flex pl-2 lg:flex-row-reverse `}>
+      <div className={`${styles.all}  flex pl-1 sm:pl-2 lg:flex-row-reverse `}>
         <div className=" w-full py-2 lg:py-0 lg:pl-2 pl-1 ">
           <Link href={`/post/${e._id}`}>
             <a className=" hover:underline flex text-sm font-bold md:text-md">

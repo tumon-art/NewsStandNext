@@ -8,7 +8,7 @@ const Opinion = ({opinion}) => {
   const data = opinion
 
   return (
-   <div className="my-2 p-4 w-full bg-white">
+   <div className="my-2 py-4 px-1 sm:px-4 w-full bg-white">
 
     <div className="flex items-center">
     <div className=" text-xl font-medium"> OPINION </div>

@@ -11,7 +11,7 @@ const OtherPosts = ({ dataPosts }) => {
 
             <div className=" w-full  ">
               <Link href={`/post/${e._id}`}>
-                <a className=" hover:underline block text-sm font-extrabold sm:text-sm lg:text-lg">
+                <a className=" pr-1 hover:underline block text-sm font-extrabold sm:text-sm lg:text-lg">
                   {" "}{e.header}{" "}
                 </a>
               </Link>
@@ -23,7 +23,7 @@ const OtherPosts = ({ dataPosts }) => {
             </div>
 
             {/* ==== IMAGE */}
-            <div className=" m-1 h-24 w-52 lg:m-0 lg:w-72 lg:h-auto overflow-hidden">
+            <div className=" my-1 h-24 w-52 lg:m-0 lg:w-72 lg:h-auto overflow-hidden">
               <Image
                 className=" object-cover"
                 height={40}

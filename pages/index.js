@@ -5,6 +5,7 @@ import OtherPosts from "../comps/Home/OtherPosts"
 import TopPosts from "../comps/TopPosts";
 
 
+
 export async function getStaticProps() {
 
   const res = await fetch(`${process.env.SERVER}getpost`)
@@ -38,7 +39,7 @@ const Index = ({dataPosts,opinionData}) => {
 
     <div className=" col-start-1 col-end-9  flex flex-col-reverse md:flex-col">
       {/* ==== OTHER POSTS */}
-      <section className=" p-3  bg-white">
+      <section className=" py-3 px-1 sm:px-3  bg-white">
       <OtherPosts dataPosts={dataPosts} />
       </section>
       <Opinion opinion={opinionData} />

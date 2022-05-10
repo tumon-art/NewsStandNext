@@ -36,17 +36,6 @@ export const SideBar = ({sideBarClick}) => {
     {/*  === Category News */}
 
     <div className=' mt-5 py-2 px-4'>
-    <span className="categorySpan"> 
-        {/* === SVG         */}
-        <svg className="h-5 w-5 text-white" viewBox="0 0 20 20"
-        fill="currentColor">
-        <path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012
-        2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 
-        6H5v2h6v-2z" clipRule="evenodd" />
-        <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
-        </svg>
-            <span className="newsCategory"> Middle East </span>
-        </span>
 
         <span className="categorySpan"> 
         {/* === SVG             */}
@@ -87,7 +76,10 @@ export const SideBar = ({sideBarClick}) => {
         6H5v2h6v-2z" clipRule="evenodd" />
         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
         </svg>
-            <span className="newsCategory"> Africa </span>
+
+            <Link href='/northamerica'>
+            <a onClick={sideBarClick} className=" newsCategory"> North America </a>
+            </Link>
 
         </span>
 
@@ -100,10 +92,7 @@ export const SideBar = ({sideBarClick}) => {
         6H5v2h6v-2z" clipRule="evenodd" />
         <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
         </svg>
-
-            <Link href='/northamerica'>
-            <a onClick={sideBarClick} className=" newsCategory"> North America </a>
-            </Link>
+            <span className="newsCategory"> Africa </span>
 
         </span>
 
@@ -120,6 +109,19 @@ export const SideBar = ({sideBarClick}) => {
 
         </span>
 
+        <span className="categorySpan"> 
+        {/* === SVG         */}
+        <svg className="h-5 w-5 text-white" viewBox="0 0 20 20"
+        fill="currentColor">
+        <path fillRule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012
+        2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 
+        6H5v2h6v-2z" clipRule="evenodd" />
+        <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z" />
+        </svg>
+        <span className="newsCategory"> Middle East </span>
+
+        </span>
+        
         <span className="categorySpan"> 
         {/* === SVG             */}
         <svg className="h-5 w-5 text-white" viewBox="0 0 20 20"

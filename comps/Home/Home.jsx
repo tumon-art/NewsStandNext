@@ -34,11 +34,11 @@ export default function Home({ data }) {
         </div>
 
         {/* === Heading */}
-        <div className=" m-5 ">
+        <div className=" my-5 mx-2 sm:mx-5 ">
           <Link href={`/post/${data[0]._id}`}>
             <a
               className=" hover:underline border-l-8 border-green-500 px-5
-               py-2 flex items-center text-xl font-extrabold sm:text-1xl lg:text-2xl"
+               py-2 flex items-center text-base font-extrabold sm:text-1xl lg:text-2xl"
             >
               {" "}
               {data[0].header}{" "}
@@ -85,7 +85,7 @@ export default function Home({ data }) {
   return (
     <div className={`block mb-5 lg:flex`}>
       {firstPost(data)}
-      <div className={`  mx-2 md:grid md:grid-cols-2 `}>
+      <div className={`  mx-0 sm:mx-2 md:grid md:grid-cols-2 `}>
         {data !== undefined &&
           data.map((e, i) => <Post key={i} i={i} data={e} />)}
       </div>
