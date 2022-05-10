@@ -6,7 +6,7 @@ import TopPosts from "../comps/TopPosts";
 
 
 export async function getStaticProps() {
-  const res = await fetch(`https://news-stand-server.herokuapp.com/getpost`)
+  const res = await fetch(`${process.env.SERVER}getpost`)
   const dataPostsall = await res.json()
   const dataPosts = dataPostsall.reverse()
   if (!dataPosts) {
@@ -45,7 +45,7 @@ const Index = ({dataPosts}) => {
     <TopPosts data={dataPosts} />
     <NewsLetter />
     </aside>
-
+    
     </section>
    </div>
   )

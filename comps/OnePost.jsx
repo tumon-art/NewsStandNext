@@ -10,12 +10,11 @@ import RelatedPost from "./Home/RelatedPost";
 
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const OnePost = () => {
+const OnePost = ({all}) => {
   const router = useRouter();
 
   // USE CONTEXT 
   const { allPost } = useContext(UC)
-
 
   // GET ID FORM URL
   const pid = router.query.id;
