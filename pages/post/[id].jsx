@@ -4,9 +4,7 @@ import RelatedPost from "../../comps/Home/RelatedPost";
 
 
 const id = ({ all }) => {
-
-
-
+// Props COMMING FORM getStaticProps down bellow
 
   return (
     <>
@@ -27,7 +25,7 @@ const id = ({ all }) => {
           <header className=" text-gray-900 text-lg px-3  
           border-b-2  font-extrabold py-3 ">
 
-            {/* ==== HEADER  */}
+          {/* ==== HEADER  */}
             <p> {all[0].header} </p>
 
             <section className=" flex text-green-600 text-xs font-bold mx-5 justify-end">

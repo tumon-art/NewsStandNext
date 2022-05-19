@@ -3,11 +3,18 @@ const NewsLetter = ({ my }) => {
   return (
     <div className={`bg-white items-center ${my}`}>
       <form className=" flex flex-col items-center py-5 px-3 sm:px-5 ">
+
         {/* === SIGN UP */}
         <div className=" relative w-full flex items-center justify-center text-center ">
+
           <div className=" absolute left-4 w-[40%] h-[1px] bg-green-700"> </div>
-          <div className=" inline text-sm px-4 bg-white md:text-base z-10 text-gray-800  mx-5 "> Sign up for  News Stand </div>
+
+          <div className=" inline text-sm px-4 bg-white md:text-base z-10 text-gray-800  mx-5 ">
+          Sign up for  News Stand
+          </div>
+
           <div className=" absolute right-4  w-[40%] h-[1px] bg-green-700"> </div>
+
         </div>
 
         <h1 className=" my-4 text-3xl md:text-lg lg:text-3xl text-gray-800 font-bold "> Weekly Newsletter</h1>

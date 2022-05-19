@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export const Footer = () => {
   return (
-   <div className=' bg-green-600'>
+   <main className=' bg-green-600'>
        
     <div className=" md:grid md:grid-cols-3 h-[25vh] md:h-[33vh]
      justify-center flex ">
@@ -15,11 +15,19 @@ export const Footer = () => {
     text-2xl font-extrabold font-sans mb-2"> Quick Links </h1>
 
     <ul>
-    <li> Asia</li>
+    <Link href="/asia">
+    <a className=" block hover:underline cursor-pointer"> Asia</a>
+    </Link>
+
+    <Link href="/europe">
+    <a className=" block hover:underline cursor-pointer"> Europe</a>
+    </Link>
+
+    <Link href="/northamerica">
+    <a className=" block hover:underline cursor-pointer"> North America </a>
+    </Link>
     <li> Middle East</li>
-    <li> Europe</li>
     <li> Africa </li>
-    <li> America </li>
     </ul>
     </div>
 
@@ -81,6 +89,6 @@ export const Footer = () => {
     </div>
     </div>
     </div>
-   </div>
+   </main>
   )
 }

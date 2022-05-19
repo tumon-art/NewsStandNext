@@ -104,7 +104,7 @@ const Asia = ({post}) => {
       {firstPost()}
 
 
-      {/* ===  POST */}
+      {/* === SOME MORE POSTS  */}
       <div>
       {data.slice(1,4).map((e,i)=>{
         return fistThree(e,i)

@@ -20,7 +20,7 @@ export default function Home({ data }) {
     return (
       <div className={`  w-full sm:min-w-[50%] 
       sm:mb-10 border-b-4 sm:border-none sm:my-0 md:flex-row-reverse `} >
-        
+
         {/* ==== IMAGE */}
         <div className=" h-auto relative sm:w-full sm:h-64 md:w-full md:h-auto overflow-hidden">
           <Image
@@ -56,15 +56,14 @@ export default function Home({ data }) {
           <h4> Releted News</h4>
 
           {relative &&
-            relative.slice(0, 3).map((e, i) => {
+            relative.slice(1, 4).map((e, i) => {
               return (
-                <p
-                  className="  my-1 text-sm font-normal text-neutral-900"
-                  key={i}
-                >
-                  {" "}
-                  {e.header}
-                </p>
+                <Link href={`/post/${e._id}`}>
+                  <a className=" block hover:underline my-1 text-sm font-normal text-neutral-900"
+                    key={i} >
+                    {e.header}
+                  </a>
+                </Link>
               );
             })}
         </section>
