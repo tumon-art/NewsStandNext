@@ -3,7 +3,7 @@ import NewsLetter from "../comps/NewsLetter"
 import Opinion from "../comps/Home/Opinion"
 import OtherPosts from "../comps/Home/OtherPosts"
 import TopPosts from "../comps/TopPosts";
-
+import Head from "next/head"
 
 
 export async function getStaticProps() {
@@ -27,10 +27,16 @@ export async function getStaticProps() {
 }
 const Index = ({dataPosts,opinionData}) => {
 
-
   // GET LAST 8 POSTS  AND REVERSE IT
   const data = dataPosts.slice(0,8)
   return (
+    <>
+    <Head>
+      <title>My page title</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="google-site-verification" content="uoLPJ2fP_-HRK5WP2P4dxJPwlxQKVPM6X1vjMWIZV5Q" />
+    </Head>
+
    <div className=" w-full md:p-6">
     <Home data={data}/>
     
@@ -53,6 +59,7 @@ const Index = ({dataPosts,opinionData}) => {
     
     </section>
    </div>
+   </>
   )
 }
 
