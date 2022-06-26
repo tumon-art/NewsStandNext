@@ -14,7 +14,7 @@ const ContPost = ({ data }) => {
               {data.header}{" "}
             </a>
           </Link>
-    
+
           <p className=" hidden sm:block my-1 text-xs md:text-sm 
         text-gray-800 overflow-hidden whitespace-pre-line"
           >
@@ -23,7 +23,7 @@ const ContPost = ({ data }) => {
           </p>
         </div>
     
-        {/* ==== IMAGE */}
+        {/* ==== IMAGE View */}
         <div className=" m-1 h-24 w-52 lg:m-0 lg:w-72 lg:h-auto overflow-hidden">
           <Image
             className=" object-cover"
