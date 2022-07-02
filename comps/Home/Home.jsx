@@ -58,7 +58,7 @@ export default function Home({ data }) {
           {relative &&
             relative.slice(1, 4).map((e, i) => {
               return (
-                <Link href={`/post/${e._id}`}>
+                <Link href={`/post/${e._id}`} key={i}>
                   <a className=" block hover:underline my-1 text-sm font-normal text-neutral-900"
                     key={i} >
                     {e.header}
