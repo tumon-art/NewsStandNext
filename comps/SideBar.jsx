@@ -6,7 +6,7 @@ export const SideBar = ({sideBarClick}) => {
    
   return (
     <div className="sidebar flex flex-col
-    h-[100vh] absolute bg-green-600 border-r-4
+    absolute bg-green-600 border-r-4
     transition-width duration-500 border-green-700">
 
     <section className=" bg-green-700">

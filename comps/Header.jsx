@@ -24,11 +24,12 @@ export const Header = () => {
     dispatch({
       type: "SIDE_BAR",
     });
+    
   };
   return (
     <>
       {sideBar && <SideBar sideBarClick={sideBarClick} />}
-
+    
       <div className="header lg:flex justify-between bg-green-600 ">
         {/* === Menu Logo  */}
         <div className="item1 lg:hidden" onClick={onMenuClick}>
