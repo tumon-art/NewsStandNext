@@ -1,12 +1,11 @@
 import Sociallinks from "./Sociallinks"
 import Link from "next/link"
-
+import NewsLetter from './NewsLetter'
 export const SideBar = ({sideBarClick}) => {
 
-   
   return (
     <div className="sidebar flex flex-col
-    absolute bg-green-600 border-r-4
+    absolute bg-green-600
     transition-width duration-500 border-green-700">
 
     <section className=" bg-green-700">
@@ -121,7 +120,8 @@ export const SideBar = ({sideBarClick}) => {
         <span className="newsCategory"> Middle East </span>
 
         </span>
-        
+
+
         <span className="categorySpan"> 
         {/* === SVG             */}
         <svg className="h-5 w-5 text-white" viewBox="0 0 20 20"
@@ -134,10 +134,17 @@ export const SideBar = ({sideBarClick}) => {
             <span className="newsCategory"> South Asia </span>
 
         </span>
-        
+
     </div>
 
-    <nav className=" self-center my-5" > <Sociallinks className={' h-6 w-6 mx-2'} /> </nav>
+      <div className='px-4 py-4'>
+        <NewsLetter/>
+      </div>
+    <nav className=" self-center my-5" >
+      <span className=" mt-3 flex items-center
+    text-white font-semibold "> Hear First, Share First!</span>
+    <Sociallinks className={' h-6 w-6 mx-2'} />
+    </nav>
 
     </div>
   )
