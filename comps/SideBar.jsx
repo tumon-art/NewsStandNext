@@ -140,7 +140,7 @@ export const SideBar = ({sideBarClick}) => {
       <div className='px-4 py-4'>
         <NewsLetter/>
       </div>
-    <nav className=" self-center my-5" >
+    <nav className=" self-center my-5 " >
       <span className=" mt-3 flex items-center
     text-white font-semibold "> Hear First, Share First!</span>
     <Sociallinks className={' h-6 w-6 mx-2'} />

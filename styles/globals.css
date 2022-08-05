@@ -52,13 +52,12 @@ body::-webkit-scrollbar {
 
 .sidebar {
     animation-name: example;
-    overflow: hidden;
+    overflow: auto;
     z-index: 4;
-    animation-duration: .3s;  
+    animation-duration: 0.4s;
     animation-fill-mode: forwards;
     height: 0;
     transition: all;
-
 }
 
 
@@ -67,10 +66,12 @@ body::-webkit-scrollbar {
     from {
       width: 0;
       height: 0;
+      border-radius: 0% 0 50% 0;
     }
     to {
       width: 100vw;
       height: 100vh;
+      border-radius: 0%;
     }
   }
 
