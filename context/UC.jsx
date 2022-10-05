@@ -7,7 +7,6 @@ const initialState = {
   allPost: [],
 };
 
-
 const Reducer = (state, action) => {
   switch (action.type) {
     case "SIDE_BAR":
@@ -35,33 +34,31 @@ const Provider = ({ children }) => {
   const [state, dispatch] = useReducer(Reducer, initialState);
 
   // AUTO LOGIN
-  useEffect(() => {  get()
-  async function get (){
+  useEffect(() => {
+    get();
+    async function get() {
+      // GET ALL POSTS
+      const getPosts = await axios.get(
+        "https://news-stand-server.herokuapp.com/getpost"
+      );
+      dispatch({
+        type: "GET_POST",
+        payload: getPosts,
+      });
 
+      const res = await axios.post(
+        `${process.env.SERVER}autologin`,
+        {},
+        { withCredentials: true }
+      );
 
-        // GET ALL POSTS 
-        const getPosts = await axios.get('https://news-stand-server.herokuapp.com/getpost')
+      // GETING BOOLEAN FROM SERVER FOR ROUTEING
+      if (res.data === true) {
         dispatch({
-          type:"GET_POST",
-          payload:getPosts
-        })
-
-        const res = await axios.post(
-          `${process.env.SERVER}autologin`,
-          {},
-          { withCredentials: true }
-        );
-
-
-        // GETING BOOLEAN FROM SERVER FOR ROUTEING
-        if (res.data === true) {
-          dispatch({
-            type: "LOG_CHECK",
-            payload: true,
-          });
-        }
-
-        
+          type: "LOG_CHECK",
+          payload: true,
+        });
+      }
     }
   }, []);
 
@@ -76,7 +73,6 @@ const Provider = ({ children }) => {
         }}
       >
         {children}
-        
       </UC.Provider>
     </>
   );

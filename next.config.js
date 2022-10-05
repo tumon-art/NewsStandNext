@@ -5,12 +5,13 @@ const nextConfig = {
     domains: ["res.cloudinary.com"],
   },
   env: {
-    SERVER : "https://evening-stream-93162.herokuapp.com/"
-  }
+    SERVER: "https://newsstand.fly.dev/",
+  },
 
- // https://news-stand-server.herokuapp.com/
- // https://evening-stream-93162.herokuapp.com/
- // http://localhost:3001/
-}
+  // https://news-stand-server.herokuapp.com/
+  // https://evening-stream-93162.herokuapp.com/
+  // http://localhost:3001/
+  // https://newsstand.fly.dev/
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
