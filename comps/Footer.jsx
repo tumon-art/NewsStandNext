@@ -32,7 +32,7 @@ export const Footer = () => {
     </div>
 
     {/* ==== Center  */}
-    <div className="flex flex-col items-center self-center ">
+    <div className="flex flex-col items-center">
 
     <Link href="/">
     <a className=" text-center px-2  shadow-sm rounded-sm
@@ -88,7 +88,12 @@ export const Footer = () => {
 
     </div>
     </div>
+    
+
     </div>
+      <p className="  text-white text-center">
+      LinkedIn Corporation © 2022
+      </p>
    </main>
   )
 }
