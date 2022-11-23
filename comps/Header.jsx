@@ -24,12 +24,11 @@ export const Header = () => {
     dispatch({
       type: "SIDE_BAR",
     });
-    
   };
   return (
     <>
       {sideBar && <SideBar sideBarClick={sideBarClick} />}
-    
+
       <div className="header lg:flex justify-between bg-green-600 ">
         {/* === Menu Logo  */}
         <div className="item1 lg:hidden" onClick={onMenuClick}>
@@ -57,18 +56,17 @@ export const Header = () => {
             <Link href="/">News-Stand</Link>
           </h1>
 
-          <nav className=" hidden lg:block ml-10 text-white font-extrabold"> 
-
-            <Link href='/asia'>
-            <a className=" px-4"> Asia </a>
-            </Link>
-            
-            <Link href='/europe'>
-            <a className=" px-4"> Europe </a>
+          <nav className=" hidden lg:block ml-10 text-white font-extrabold">
+            <Link href="/asia">
+              <a className=" px-4"> Asia </a>
             </Link>
 
-            <Link href='/northamerica'>
-            <a className=" px-4"> North America </a>
+            <Link href="/europe">
+              <a className=" px-4"> Europe </a>
+            </Link>
+
+            <Link href="/northamerica">
+              <a className=" px-4"> North America </a>
             </Link>
 
             <span className=" px-4"> Africa </span>

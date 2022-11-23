@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     domains: ["res.cloudinary.com"],
   },
+  experimental: { images: { allowFutureImage: true } },
   // env: {
   //   SERVER: "https://newsstand.fly.dev/",
   // },
