@@ -4,6 +4,7 @@ import Opinion from "../comps/Home/Opinion";
 import OtherPosts from "../comps/Home/OtherPosts";
 import TopPosts from "../comps/TopPosts";
 import Head from "next/head";
+import { useEffect } from "react";
 
 export async function getStaticProps() {
   const res = await fetch(`${process.env.SERVER}getpost`);
@@ -14,6 +15,7 @@ export async function getStaticProps() {
   const opinionRes = await fetch(`${process.env.SERVER}getopinion`);
   const opinionData = await opinionRes.json();
 
+
   return {
     props: { dataPosts, opinionData },
     revalidate: 10,
@@ -22,6 +24,7 @@ export async function getStaticProps() {
 const Index = ({ dataPosts, opinionData }) => {
   // GET LAST 8 POSTS  AND REVERSE IT
   const data = dataPosts.slice(0, 8);
+
   return (
     <>
       <Head>
